@@ -15,6 +15,8 @@ public class Frame extends JFrame{
         this.setSize(new Dimension(800, 600));
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setResizable(false);
+        this.getContentPane().add(new DrawingArea());
+        this.getContentPane().add(new ShapePanel(), BorderLayout.WEST);
     }
 
 }
