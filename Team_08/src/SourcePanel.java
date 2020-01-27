@@ -45,7 +45,7 @@ public class SourcePanel extends Application {
         root.setLeft(makeToolPanel(canvas));
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Project02 Team XX");
+        stage.setTitle("Project02 Team 08");
         stage.setResizable(false);
         stage.show();
     }
