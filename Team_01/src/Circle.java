@@ -10,6 +10,8 @@ public class Circle implements Shapes {
 		Shape circle = new Ellipse2D.Double(x, y, 200, 200);
 		Graphics2D graphics2 = (Graphics2D) graphic;
 		graphics2.draw(circle);
+		
+		Frame.addShape(circle, ShapesEnum.CIRCLE);
 	}
 
 }

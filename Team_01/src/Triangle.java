@@ -14,6 +14,8 @@ public class Triangle implements Shapes {
 	
 		Graphics2D g2 = (Graphics2D) graphic;
 		g2.draw(path);
+		
+		Frame.addShape(path, ShapesEnum.TRIANGLE);
 	}
 
 }
