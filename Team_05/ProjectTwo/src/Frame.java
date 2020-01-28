@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JButton;
 
 public class Frame extends JFrame{
 	/**
@@ -19,6 +20,12 @@ public class Frame extends JFrame{
 		JPanel leftPanel = new JPanel();
 		leftPanel.setSize(this.getWidth() / 5, this.getHeight());
 		leftPanel.setBackground(Color.white);
+		
+		RoundButton round = new RoundButton("round");
+		TriangleButton triangle = new TriangleButton("triangle");
+		triangle.setText("triangle");
+		leftPanel.add(round);
+		leftPanel.add(triangle);
 		
 		JPanel rightPanel = new JPanel();
 		rightPanel.setSize(this.getWidth() - this.getWidth() / 5, this.getHeight());
