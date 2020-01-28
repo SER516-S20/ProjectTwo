@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,6 +28,15 @@ public class Frame extends JFrame {
 		try {
 			JPanel leftPanel = new JPanel() {
 				private static final long serialVersionUID = 1L;
+				public void paintComponent(Graphics g) {
+					super.paintComponent(g);
+					Shapes square = new Square();
+					square.drawShape(g, 50, 50);
+					Shapes circle = new Circle();
+					circle.drawShape(g, 50, 350);
+					Shapes triangle = new Triangle();
+					triangle.drawShape(g, 50, 800);
+				}
 			};
 			leftPanel.setBounds(0, 0, this.getWidth() / 4, this.getHeight());
 			leftPanel.setVisible(true);
