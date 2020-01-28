@@ -1,45 +1,40 @@
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import javax.swing.*;
-import java.lang.reflect.InvocationTargetException;
 
-public class FrameClass extends JFrame{
+public class ObjectInterface extends JButton{
+    public ObjectInterface(String label) {
+        super(label);
+        Dimension size = getPreferredSize();
+        size.width = size.height = Math.max(size.width,size.height);
+        setPreferredSize(size);
 
-	FrameClass(String name) {
-		this.setTitle(name);
-	    this.setMinimumSize(new Dimension(800, 600));
-	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setContentAreaFilled(false);
+    }
 
-	    getContentPane().add(addPanels());
-	    
-	    this.pack();
-	    this.setLocationRelativeTo(null);
-	    this.setVisible(true);
-	}
-	    public JSplitPane addPanels() {
-	    Class<?> panelClass1;
-	    Class<?> panelClass2;
-		try {
-			panelClass1 = Class.forName("LeftPanel");
-		    panelClass2 = Class.forName("RightPanel");		
-	        JPanel panel1 = (JPanel) panelClass1.getDeclaredConstructor().newInstance();
-	        JPanel panel2 = (JPanel) panelClass2.getDeclaredConstructor().newInstance();
-	        JSplitPane splitPane = new JSplitPane();
-	        splitPane.setSize(800, 600);
-	        splitPane.setDividerSize(0);
-	        splitPane.setDividerLocation(150);
-	        splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
-	        splitPane.setLeftComponent(panel1);
-	        splitPane.setRightComponent(panel2);
-		    return splitPane;
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-	    
-	    public static void main(String args[]) {
-	    	new FrameClass("Somesh");
-	    }
+    protected void paintComponent(Graphics g) {
+        if (getModel().isArmed()) {
+            g.setColor(Color.lightGray);
+        } else {
+            g.setColor(getBackground());
+        }
+        g.fillOval(0, 0, getSize().width-1,getSize().height-1);
+
+        super.paintComponent(g);
+    }
+
+    protected void paintBorder(Graphics g) {
+        g.setColor(getForeground());
+        g.drawOval(0, 0, getSize().width-1,     getSize().height-1);
+    }
+
+    Shape shape;
+    public boolean contains(int x, int y) {
+        if (shape == null ||
+                !shape.getBounds().equals(getBounds())) {
+            shape = new Ellipse2D.Float(0, 0, getWidth(), getHeight());
+        }
+        return shape.contains(x, y);
+    }
 
 }
