@@ -9,21 +9,25 @@ import java.awt.*;
  */
 public class ShapePanel extends JPanel {
 
-    ShapePanel(){
+    static JButton circleButton, squareButton, triangleButton ;
+
+    ShapePanel() {
         this.setLayout(new BorderLayout());
         this.add(constructCircle(), BorderLayout.NORTH);
-        this.add(constructRectangle(), BorderLayout.CENTER);
+        this.add(constructSquare(), BorderLayout.CENTER);
         this.add(constructTriangle(), BorderLayout.SOUTH);
+        new JButtonActionListener().addActionListener();
     }
 
     /**
      * returns a JButton with Circle shape on it
      * @return JButton
      */
-    private static JButton constructCircle(){
-        JButton circleButton = new JButton();
+    private static JButton constructCircle() {
+        circleButton = new JButton();
         circleButton.setPreferredSize(new Dimension(190, 190));
-        circleButton.setText("Circle");
+        circleButton.setBackground(Color.GRAY);
+        circleButton.setOpaque(true);
         return circleButton;
     }
 
@@ -31,21 +35,23 @@ public class ShapePanel extends JPanel {
      * returns a JButton with Rectangle shape on it
      * @return JButton
      */
-    private static JButton constructRectangle(){
-        JButton rectangleButton = new JButton();
-        rectangleButton.setPreferredSize(new Dimension(190, 190));
-        rectangleButton.setText("Rectangle");
-        return rectangleButton;
+    private static JButton constructSquare() {
+        squareButton = new JButton();
+        squareButton.setPreferredSize(new Dimension(190, 190));
+        squareButton.setBackground(Color.GRAY);
+        squareButton.setOpaque(true);
+        return squareButton;
     }
 
     /**
      * returns a JButton with Triangle shape on it
      * @return JButton
      */
-    private static JButton constructTriangle(){
-        JButton triangleButton = new JButton();
+    private static JButton constructTriangle() {
+        triangleButton = new JButton();
         triangleButton.setPreferredSize(new Dimension(190, 190));
-        triangleButton.setText("Triangle");
+        triangleButton.setBackground(Color.GRAY);
+        triangleButton.setOpaque(true);
         return triangleButton;
     }
 

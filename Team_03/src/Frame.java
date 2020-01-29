@@ -8,6 +8,7 @@ import java.awt.*;
  * @version 1.0
  */
 public class Frame extends JFrame{
+    static DrawingArea drawingArea;
 
     Frame(){
         this.setTitle("Project Two - Team 3");
@@ -15,7 +16,8 @@ public class Frame extends JFrame{
         this.setSize(new Dimension(800, 600));
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.getContentPane().add(new DrawingArea());
+        drawingArea = new DrawingArea();
+        this.getContentPane().add(drawingArea);
         this.getContentPane().add(new ShapePanel(), BorderLayout.WEST);
     }
 
