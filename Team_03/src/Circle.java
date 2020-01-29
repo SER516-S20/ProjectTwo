@@ -1,11 +1,12 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Square implements Shape {
+public class Circle implements Shape{
 
+	
 	private int cordX;
 	private int cordY;
-
+	
 	@Override
 	public void setPosition(int x, int y) {
 		this.cordX = x;
@@ -14,11 +15,10 @@ public class Square implements Shape {
 
 	@Override
 	public void draw(Graphics g) {
-
 		g.setColor(Color.red);
-		g.drawRect(cordX, cordY, 10, 15);
+		g.drawOval(cordX, cordY,  10, 15);
 		g.fillRect(cordX, cordY, 10, 15);
-
+		
 	}
 
 }
