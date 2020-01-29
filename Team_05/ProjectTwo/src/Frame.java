@@ -58,8 +58,19 @@ public class Frame extends JFrame{
 			}
 		});
 		triangle.setText("triangle");
+		
+		RectangleButton rectangle = new RectangleButton("rectangle");
+		rectangle.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				RectangleButton instance = new RectangleButton("");
+				rightPanel.add(instance);
+				contentRepaint();
+			}
+		});
 		leftPanel.add(round);
 		leftPanel.add(triangle);
+		leftPanel.add(rectangle);
 		
 		return leftPanel;
 	}
