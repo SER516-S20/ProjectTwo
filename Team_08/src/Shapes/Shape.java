@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 public abstract class Shape {
     int left, top;      // Position of top left corner of rectangle that bounds this shape.
     int width, height;  // Size of the bounding rectangle.
-    Color color = Color.WHITE;  // Color of this shape.
+    Color color = Color.WHITE;
 
     public void reshape(int left, int top, int width, int height) {
         // Set the position and size of this shape.
@@ -24,16 +24,11 @@ public abstract class Shape {
     }
 
     public void setColor(Color color) {
-        // Set the color of this shape
         this.color = color;
     }
 
     public boolean containsPoint(int x, int y) {
         // Check whether the shape contains the point (x,y).
-        // By default, this just checks whether (x,y) is inside the
-        // rectangle that bounds the shape.  This method should be
-        // overridden by a subclass if the default behavior is not
-        // appropriate for the subclass.
         if (x >= left && x < left+width && y >= top && y < top+height)
             return true;
         else
@@ -42,6 +37,5 @@ public abstract class Shape {
 
     public abstract void draw(GraphicsContext g);
     // Draw the shape in the graphics context g.
-    // This must be overriden in any concrete subclass.
 
 }
