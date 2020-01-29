@@ -6,9 +6,9 @@ import javax.swing.JPanel;
 
 public class LeftPanel extends JPanel
 {
-	RoundButton roundButton = new RoundButton("Round");
-	TriangleButton triangleButton = new TriangleButton("Triangle");
-	RectangleButton rectangleButton = new RectangleButton("Rectangle");
+	private RoundButton roundButton = new RoundButton("Round");
+	private TriangleButton triangleButton = new TriangleButton("Triangle");
+	private RectangleButton rectangleButton = new RectangleButton("Rectangle");
 	
 	public LeftPanel()
 	{
@@ -17,7 +17,6 @@ public class LeftPanel extends JPanel
 		this.add(triangleButton);
 		this.add(rectangleButton);
 		this.setLayout(gridLayout);
-		
 	}
 	
 	public void SetMouseAdapter_RoundButton(MouseAdapter adapter) 
