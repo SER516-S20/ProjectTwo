@@ -1,10 +1,12 @@
+/* Version: 1.1
+*/
+
 package Shapes;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class OvalShape extends Shape {
-    // This class represents oval shapes.
     public void draw(GraphicsContext g) {
         g.setFill(color);
         g.fillOval(left,top,width,height);
@@ -12,10 +14,7 @@ public class OvalShape extends Shape {
         g.strokeOval(left,top,width,height);
     }
     public boolean containsPoint(int x, int y) {
-        // Check whether (x,y) is inside this oval, using the
-        // mathematical equation of an ellipse.  This replaces the
-        // definition of containsPoint that was inherited from the
-        // shapes.Shape class.
+        // Check whether (x,y) is inside this oval.
         double rx = width/2.0;   // horizontal radius of ellipse
         double ry = height/2.0;  // vertical radius of ellipse
         double cx = left + rx;   // x-coord of center of ellipse
