@@ -5,7 +5,7 @@ import java.awt.Graphics;
  * @since 01-29-2020
  */
 
-public interface Shape{
+public interface Shapes{
 	public void drawShape(Graphics graphic, double x, double y);
 	
 }
