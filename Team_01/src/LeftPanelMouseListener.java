@@ -38,7 +38,7 @@ public class LeftPanelMouseListener extends MouseAdapter {
 	 * Instantiates or uses the created instance of different shapes' class
 	 * and sets isClicked value as true for the shape which was clicked.
 	 */
-	private void markIsClickedTrue(ShapesEnum shape) {
+	public static void markIsClickedTrue(ShapesEnum shape) {
 		try {
 			if (ShapesEnum.SQUARE == shape) {
 				setTriangleClicked(false);
