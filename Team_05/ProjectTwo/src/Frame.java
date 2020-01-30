@@ -1,22 +1,19 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JButton;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
+/***
+ * this class is to show the app
+ * @author Hongqi Zhang
+ */
 public class Frame extends JFrame{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private static final String title = "ProjectTwo-Team 5";
 	private static final Color lBackground = new Color(255, 255, 240);
 	private static final Color rBackground = new Color(240, 255, 255);
-	private RightPanel rightPanel;
-	private LeftPanel leftPanel;
+	private RightPanel dragArea;
+	private LeftPanel btnContainer;
 	
 	public Frame() {
 		this.setTitle(title);
@@ -27,9 +24,9 @@ public class Frame extends JFrame{
 		
 
 		//add panels to the frame
-		leftPanel = new LeftPanel();
-		rightPanel = new RightPanel();
-		rightPanel.SetFrame(this);
+		btnContainer = new LeftPanel();
+		dragArea = new RightPanel();
+		dragArea.SetFrame(this);
 		this.getContentPane().add(createLeftPanel());
 		this.getContentPane().add(createRightPanel());
 		
@@ -40,22 +37,22 @@ public class Frame extends JFrame{
 	
 	private JPanel createLeftPanel() {
 		
-		leftPanel.setSize(200, 500);
-		leftPanel.setLocation(0, 0);
-		leftPanel.setBackground(lBackground);
-		leftPanel.SetMouseAdapter_RoundButton(new LeftPanelMouse(rightPanel));
-		leftPanel.SetMouseAdapter_TriangleButton(new LeftPanelMouse(rightPanel));
-		leftPanel.SetMouseAdapter_RectangleButton(new LeftPanelMouse(rightPanel));
+		btnContainer.setSize(200, 500);
+		btnContainer.setLocation(0, 0);
+		btnContainer.setBackground(lBackground);
+		btnContainer.SetMouseAdapter_RoundButton(new LeftPanelMouse(dragArea));
+		btnContainer.SetMouseAdapter_TriangleButton(new LeftPanelMouse(dragArea));
+		btnContainer.SetMouseAdapter_RectangleButton(new LeftPanelMouse(dragArea));
 		
-		return leftPanel;
+		return btnContainer;
 	}
 	
 	private JPanel createRightPanel() {
-		rightPanel.setLocation(200, 0);
-		rightPanel.setSize(600, 500);
-		rightPanel.setBackground(rBackground);
+		dragArea.setLocation(200, 0);
+		dragArea.setSize(600, 500);
+		dragArea.setBackground(rBackground);
 		
-		return rightPanel;
+		return dragArea;
 	}
 	
 	public void contentRepaint() {

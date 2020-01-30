@@ -1,10 +1,8 @@
-/**
- * @author sarvansh prasher
- * Created on 01-27-2020
- * @author Surya
- * modified on 01-28-2020
- */
 
+/**
+ * @author Suryadeep
+ * Created on 01-27-2020
+ */
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -14,7 +12,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 
 public class PanelRectangle extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -35,8 +32,12 @@ public class PanelRectangle extends JPanel {
 	}
 
 	public void paintComponent(Graphics objGraphics) {
-		Graphics2D obj2D = (Graphics2D) objGraphics;
-		Shape objRectangle = new Rectangle(105, 60, 100, 80);
-		obj2D.draw(objRectangle);
+		try {
+			Graphics2D obj2D = (Graphics2D) objGraphics;
+			Shape objRectangle = new Rectangle(105, 60, 100, 80);
+			obj2D.draw(objRectangle);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
 	}
 }

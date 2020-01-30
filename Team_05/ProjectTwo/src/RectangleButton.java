@@ -1,9 +1,7 @@
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Polygon;
 import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
@@ -11,10 +9,12 @@ import java.awt.geom.Ellipse2D;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
+/**
+* @author Kai-Rui Hsu
+* This class can draw and create rectangle button.
+**/
+
 public class RectangleButton extends JButton{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Shape rectangle;
 	private Color foreground = new Color(178, 255, 102);
