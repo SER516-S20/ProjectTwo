@@ -31,7 +31,6 @@ public class RectangleButton extends JButton{
 		setBorderPainted(false);
 		setContentAreaFilled(false);
 		setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
-		//rectangle = createRectangle();
 	}
 
 	protected void paintComponent(Graphics g) {
