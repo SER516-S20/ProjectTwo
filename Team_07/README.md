@@ -4,7 +4,7 @@ Steps to run:
 
 Step 1: Import project folder Team_07 in your IDE. 
 
-Step 2: Run mainFrame.java
+Step 2: Run mainWindow.java
 
 Possible error scenarios: 
 
