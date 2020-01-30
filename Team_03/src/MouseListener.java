@@ -6,6 +6,7 @@
 
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 
 /**
@@ -14,6 +15,7 @@ import javax.swing.event.MouseInputAdapter;
 
 class MouseListener extends MouseInputAdapter {
     private Point startPoint;
+    static final String INFO_MESSAGE = "Please select a shape";
 
     public void mousePressed(MouseEvent e) {
         startPoint = e.getPoint();
@@ -31,12 +33,13 @@ class MouseListener extends MouseInputAdapter {
             circle.setPosition(x, y);
             Frame.drawingArea.addCircle(circle);
 
-        } else {
+        } else if (JButtonActionListener.isTrianglePanelClicked) {
             Triangle triangle = new Triangle();
             triangle.setPosition(x, y);
             Frame.drawingArea.addTriangle(triangle);
+        } else {
+            JOptionPane.showMessageDialog(null, INFO_MESSAGE);
         }
-
     }
 }
 
