@@ -18,20 +18,20 @@ public class PanelRectangle extends JPanel {
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ClickedShape cs = new ClickedShape();
-				cs.returnShape("Rectangle");
+				ClickedShape objClickedShape = new ClickedShape();
+				objClickedShape.returnShape("Rectangle");
 			}
 		});
-		JPanel contentPane = new JPanel();
+		JPanel objRectanglePane = new JPanel();
 		repaint();
 
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(null);
+		objRectanglePane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		objRectanglePane.setLayout(null);
 	}
 
-	public void paintComponent(Graphics g) {
-		Graphics2D g2 = (Graphics2D) g;
-		Shape objRectang = new Rectangle(20, 10, 80, 60);
-		g2.draw(objRectang);
+	public void paintComponent(Graphics objGraphics) {
+		Graphics2D obj2D = (Graphics2D) objGraphics;
+		Shape objRectangle = new Rectangle(105, 60, 100, 80);
+		obj2D.draw(objRectangle);
 	}
 }
