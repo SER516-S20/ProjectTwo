@@ -23,6 +23,7 @@ public class Frame extends JFrame{
 		this.setMinimumSize(new Dimension(800, 500));
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(null);
 		
 
 		//add panels to the frame
@@ -39,7 +40,8 @@ public class Frame extends JFrame{
 	
 	private JPanel createLeftPanel() {
 		
-		leftPanel.setSize(this.getWidth() / 5, this.getHeight());
+		leftPanel.setSize(200, 500);
+		leftPanel.setLocation(0, 0);
 		leftPanel.setBackground(lBackground);
 		leftPanel.SetMouseAdapter_RoundButton(new LeftPanelMouse(rightPanel));
 		leftPanel.SetMouseAdapter_TriangleButton(new LeftPanelMouse(rightPanel));
@@ -49,8 +51,8 @@ public class Frame extends JFrame{
 	}
 	
 	private JPanel createRightPanel() {
-		
-		rightPanel.setSize(this.getWidth() - this.getWidth() / 5, this.getHeight());
+		rightPanel.setLocation(200, 0);
+		rightPanel.setSize(600, 500);
 		rightPanel.setBackground(rBackground);
 		
 		return rightPanel;
