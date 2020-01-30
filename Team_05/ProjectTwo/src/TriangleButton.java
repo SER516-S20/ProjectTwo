@@ -8,10 +8,13 @@ import java.awt.Shape;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
+/**
+ * this class implement the customer triangle button
+ * @author hzhan193
+ *
+ */ 
 public class TriangleButton extends JButton{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private Shape triangle;
 	private Color foreground = new Color(178, 255, 102);
@@ -28,9 +31,7 @@ public class TriangleButton extends JButton{
 		setBorderPainted(false);
 		setContentAreaFilled(false);
 		setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
-		//System.out.println(size.width + ", " + size.height);
 		triangle = createTriangle();
-		//System.out.println(getWidth() + ", " + getHeight());
 	}
 
 	protected void paintComponent(Graphics g) {
