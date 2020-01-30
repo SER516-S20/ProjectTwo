@@ -23,7 +23,7 @@ public class ShapePanel extends JPanel {
      * returns a JButton with Circle shape on it
      * @return JButton
      */
-    private static JButton constructCircle() {
+    private JButton constructCircle() {
         circleButton = new JButton();
         circleButton.setPreferredSize(new Dimension(190, 190));
         circleButton.setBackground(Color.GRAY);
@@ -35,7 +35,7 @@ public class ShapePanel extends JPanel {
      * returns a JButton with Rectangle shape on it
      * @return JButton
      */
-    private static JButton constructSquare() {
+    private JButton constructSquare() {
         squareButton = new JButton();
         squareButton.setPreferredSize(new Dimension(190, 190));
         squareButton.setBackground(Color.GRAY);
@@ -47,7 +47,7 @@ public class ShapePanel extends JPanel {
      * returns a JButton with Triangle shape on it
      * @return JButton
      */
-    private static JButton constructTriangle() {
+    private JButton constructTriangle() {
         triangleButton = new JButton();
         triangleButton.setPreferredSize(new Dimension(190, 190));
         triangleButton.setBackground(Color.GRAY);
