@@ -11,7 +11,7 @@ import java.awt.event.MouseListener;
 
 //left panel from where we select shapes
 public class LeftPanel implements Panel {
-    JPanel panel;
+    final JPanel panel;
 
     LeftPanel() {
         panel = new JPanel();

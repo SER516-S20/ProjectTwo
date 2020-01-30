@@ -12,9 +12,7 @@ import java.awt.event.MouseMotionListener;
 
 //right panel where we create shapes
 public class RightPanel implements Panel {
-    JPanel panel;
-    final int[] X = new int[1];
-    final int[] Y = new int[1];
+    final JPanel panel;
 
     RightPanel() {
         panel = new JPanel();
@@ -27,31 +25,31 @@ public class RightPanel implements Panel {
 
     //makes the shape draggable
     public void drag(JPanel shape) {
-        final int[] X = new int[1];
-        final int[] Y = new int[1];
+        final int[] dragX = new int[1];
+        final int[] dragY = new int[1];
         shape.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                int final_x = e.getXOnScreen() + X[0];
-                int final_y = e.getYOnScreen() + Y[0];
-                if (final_x > 650) {
-                    final_x = 650;
-                } else if (final_x < -50) {
-                    final_x = -50;
+                int mouseLocationX = e.getXOnScreen() + dragX[0];
+                int mouseLocationY = e.getYOnScreen() + dragY[0];
+                if (mouseLocationX > 650) {
+                    mouseLocationX = 650;
+                } else if (mouseLocationX < -50) {
+                    mouseLocationX = -50;
                 }
-                if (final_y > 625) {
-                    final_y = 625;
-                } else if (final_y < -50) {
-                    final_y = -50;
+                if (mouseLocationY > 625) {
+                    mouseLocationY = 625;
+                } else if (mouseLocationY < -50) {
+                    mouseLocationY = -50;
                 }
-                shape.setLocation(final_x,
-                        final_y);
+                shape.setLocation(mouseLocationX,
+                        mouseLocationY);
             }
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                X[0] = shape.getX() - e.getXOnScreen();
-                Y[0] = shape.getY() - e.getYOnScreen();
+                dragX[0] = shape.getX() - e.getXOnScreen();
+                dragY[0] = shape.getY() - e.getYOnScreen();
             }
         });
     }
