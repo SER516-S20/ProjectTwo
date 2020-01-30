@@ -3,8 +3,8 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 /***
- * @author Hongqi Zhang
  * this class is to show the app
+ * @author Hongqi Zhang
  */
 public class Frame extends JFrame{
 
