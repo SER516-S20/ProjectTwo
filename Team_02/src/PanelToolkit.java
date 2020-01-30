@@ -1,16 +1,14 @@
 
 /**
  * @author Suryadeep
- * Created on 01-28-2020
+ * @created on 01-28-2020
  */
 
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.lang.reflect.InvocationTargetException;
-
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
-
 public class PanelToolkit extends JPanel {
 
 	private static final long serialVersionUID = 1L;
