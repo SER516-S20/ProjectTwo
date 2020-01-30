@@ -1,8 +1,7 @@
+
 /**
- * @author sarvansh prasher
+ * @author Suryadeep
  * Created on 01-27-2020
- * @author Surya
- * modified on 01-28-2020
  */
 
 import java.awt.Graphics;
@@ -34,8 +33,12 @@ public class PanelCircle extends JPanel {
 	}
 
 	public void paintComponent(Graphics objGraphics) {
-		Graphics2D obj2D = (Graphics2D) objGraphics;
-		Shape objCircle = new Ellipse2D.Double(105, 60, 80, 80);
-		obj2D.draw(objCircle);
+		try {
+			Graphics2D obj2D = (Graphics2D) objGraphics;
+			Shape objCircle = new Ellipse2D.Double(105, 60, 80, 80);
+			obj2D.draw(objCircle);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
 	}
 }
