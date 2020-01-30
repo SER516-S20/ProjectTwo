@@ -1,10 +1,3 @@
-/**
-* Created on January 28,2020
-* @author Rohit Kumar Singh
-*/
-
-package ProjectTwo.Team_02;
-
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
@@ -15,6 +8,9 @@ import java.util.Map;
 
 import javax.swing.JComponent;
 
+/**
+ * @author Rohit Kumar Singh Created on 01-28-2020
+ */
 
 public class DragDropShapes extends JComponent {
 
@@ -25,8 +21,8 @@ public class DragDropShapes extends JComponent {
 	private String draggedShape = shapeName;
 
 	/*
-	*	Drag and Drops Different shapes
-	*/
+	 * Drag and Drops Different shapes
+	 */
 	public DragDropShapes() {
 
 		shapeOrigin = new HashMap<>();

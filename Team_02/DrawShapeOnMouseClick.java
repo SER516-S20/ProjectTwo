@@ -1,5 +1,3 @@
-package ProjectTwo.Team_02;
-
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -15,8 +13,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- * @author abhinaw sarang 
- * created on 01-27-2020
+ * @author abhinaw sarang created on 01-27-2020
+ * @author Rohit Kumar Singh modified on 01-28-2020
  */
 
 public class DrawShapeOnMouseClick extends JPanel {
@@ -30,31 +28,25 @@ public class DrawShapeOnMouseClick extends JPanel {
 	public DrawShapeOnMouseClick() {
 		shapeOrigin = new HashMap<>();
 		this.setPreferredSize(new Dimension(1600, 800));
-                this.setVisible(true);
+		this.setVisible(true);
 		addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-                         try{
-                            selectedShapeName = ClickedShape.shapeName;
-                         }
-                         catch(Exception e1)
-                        {
-                            JOptionPane.showMessageDialog(null, e1);
-                        }
-                            // JOptionPane.showMessageDialog(null, selectedShapeName);
-                               if(selectedShapeName.isEmpty()|| (selectedShapeName==null)){
-                                   System.out.println("selectedShapeName");
-                                    JOptionPane.showMessageDialog(null, "Please select a shape");
-                               }
-                               else
-                        {
-                            
-                            //selectedShapeName = "Circle";
-				shapeOrigin.put(new Point(e.getX(), e.getY()), selectedShapeName);
-				repaint();
+				try {
+					selectedShapeName = ClickedShape.shapeName;
+				} catch (Exception e1) {
+					JOptionPane.showMessageDialog(null, e1);
+				}
+				if (selectedShapeName.isEmpty() || (selectedShapeName == null)) {
+					System.out.println("selectedShapeName");
+					JOptionPane.showMessageDialog(null, "Please select a shape");
+				} else {
+
+					shapeOrigin.put(new Point(e.getX(), e.getY()), selectedShapeName);
+					repaint();
+				}
 			}
-                        }
 
 			@Override
 			public void mousePressed(MouseEvent e) {
