@@ -8,7 +8,7 @@ import javax.swing.event.MouseInputAdapter;
 class MouseListener extends MouseInputAdapter {
 	private Point startPoint;
 	static boolean activateDrag = false;
-	static final String INFO_MESSAGE = "Please select a shape";
+	static final String ALERT_MESSAGE = "Please select a shape";
 
 	public void mousePressed(MouseEvent e) {
 		startPoint = e.getPoint();
@@ -38,7 +38,7 @@ class MouseListener extends MouseInputAdapter {
 				triangle.setPosition(cordinateX, cordinateY);
 				Frame.drawingArea.addTriangle(triangle);
 			} else {
-				JOptionPane.showMessageDialog(null, INFO_MESSAGE);
+				JOptionPane.showMessageDialog(null, ALERT_MESSAGE);
 
 			}
 		}

@@ -8,11 +8,13 @@ import java.util.ArrayList;
 public class DrawingArea extends JPanel {
 
 	static ArrayList<Shape> listOfShapes = new ArrayList<Shape>();
+	static final int DRAWING_AREA_HEIGHT = 800;
+	static final int DRAWING_AREA_WIDTH = 600;
 
 	DrawingArea() {
 
 		this.setBackground(Color.WHITE);
-		this.setPreferredSize(new Dimension(800, 600));
+		this.setPreferredSize(new Dimension(DRAWING_AREA_HEIGHT, DRAWING_AREA_WIDTH));
 		MouseListener ml = new MouseListener();
 		addMouseListener(ml);
 		addMouseMotionListener(ml);
