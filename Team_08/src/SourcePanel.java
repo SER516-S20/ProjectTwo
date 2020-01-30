@@ -13,11 +13,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import Shapes.OvalShape;
 import Shapes.RectangleShape;
 import Shapes.Shape;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import javafx.stage.Stage;
 
 
 public class SourcePanel extends Application {
@@ -33,7 +37,7 @@ public class SourcePanel extends Application {
         launch(args);
     }
 
-    public void start(Stage stage) {
+    public void start(Stage stage) throws FileNotFoundException {
         canvas = makeCanvas();
         //Panel panel = new Panel();
         canvas = makeCanvas();
@@ -46,50 +50,44 @@ public class SourcePanel extends Application {
         root.setLeft(makeToolPanel(canvas));
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Project02 Team XX");
+        stage.setTitle("Project02 Team 08");
         stage.setResizable(false);
         stage.show();
     }
 
+    // Creates a canvas, and add mouse listeners to implement dragging.
+    // The listeners are given by methods that are defined below.
     private Canvas makeCanvas() {
-        // Creates a canvas, and add mouse listeners to implement dragging.
-        // The listeners are given by methods that are defined below.
         Canvas canvas = new Canvas(800,600);
         canvas.setOnMousePressed( this::mousePressed );
         canvas.setOnMouseReleased( this::mouseReleased );
         canvas.setOnMouseDragged( this::mouseDragged );
-
         canvas.setOnMouseClicked(this::mouseClicked);
-        //canvas.setOnMouseEntered(this::mouseEntered);
         return canvas;
     }
 
-    private VBox makeToolPanel(Canvas canvas) {
-        // Make a pane containing the buttons that are used to add shapes
-        // and the pop-up menu for selecting the current color.
-        //OvalShape ovalShape = new OvalShape();
-        FileInputStream input = null;
-//        try {
-//            input = new FileInputStream("src/image/circle.png");
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-        //Image image = new Image(input);
-        //ImageView imageView = new ImageView(image);
-        Button ovalButton = new Button("C");
-        ovalButton.setOnAction( (e) -> addShape( new OvalShape(),10,100,50,50 ));
-//        try {
-//            input = new FileInputStream("src/image/rectangle.png");
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        image = new Image(input);
-//        imageView = new ImageView(image);
+    // Make a pane containing the buttons that are used to add shapes
+    // and the pop-up menu for selecting the current color.
+    private VBox makeToolPanel(Canvas canvas) throws FileNotFoundException {
 
-        Button rectButton = new Button("R");
+        FileInputStream input = null;
+
+//        FileInputStream input = new FileInputStream("/Image/circle.png");
+//        Image image = new Image(input);
+//        ImageView imageView = new ImageView(image);
+//
+//        Button button = new Button("H", imageView);
+//        Scene scene = new Scene(button, 200, 100);
+
+        Image circleimage = new Image(getClass().getResourceAsStream("/Image/shape_cir.png"));
+        Button ovalButton = new Button("", new ImageView(circleimage));
+        ovalButton.setOnAction( (e) -> addShape( new OvalShape(),10,100,50,50 ));
+//        Button ovalButton = new Button("Circle");
+//        Button rectButton = new Button("Rectangle");
+
+        Image imageOk = new Image(getClass().getResourceAsStream("/Image/shape_squ.png"));
+        Button rectButton = new Button("", new ImageView(imageOk));
         rectButton.setOnAction( (e) -> addShape( new RectangleShape(),10,400,75,50 ) );
-        //Button roundRectButton = new Button("Add a RoundRect");
-        //roundRectButton.setOnAction( (e) -> addShape( new RoundRectShape() ) );
         ComboBox<String> combobox = new ComboBox<>();
         combobox.setEditable(false);
         Color[] colors = { Color.RED, Color.GREEN, Color.BLUE, Color.CYAN,
@@ -101,6 +99,7 @@ public class SourcePanel extends Application {
         combobox.setOnAction(
                 e -> currentColor = colors[combobox.getSelectionModel().getSelectedIndex()] );
         VBox tools = new VBox(5);
+//        tools.getChildren().add(button3);
         tools.getChildren().add(ovalButton);
         tools.getChildren().add(rectButton);
         //tools.getChildren().add(roundRectButton);
