@@ -1,18 +1,27 @@
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import javax.swing.JPanel;
 
 public class DragPanel{
-	public DragPanel(JPanel panel){
-       final JPanel p = panel;
-            panel.addMouseMotionListener(new MouseMotionAdapter() {
+	protected int x;
+	protected int y;
 
-                @Override
-                public void mouseDragged(MouseEvent me) {
-                    me.translatePoint(me.getComponent().getLocation().x, me.getComponent().getLocation().y);
-                    p.setLocation(me.getX(), me.getY());
-                }
-
-            });
-        }
+	public DragPanel(final JPanel panel){
+	    panel.addMouseListener(new MouseAdapter() {
+	        @Override
+	        public void mousePressed(MouseEvent me) {
+	             x = me.getX();
+	             y = me.getY();
+	        }
+	    });
+	    panel.addMouseMotionListener(new MouseMotionAdapter() {
+	        @Override
+	        public void mouseDragged(MouseEvent me) {
+	            me.translatePoint(me.getComponent().getLocation().x-x, me.getComponent().getLocation().y-y);
+	            panel.setLocation(me.getX(), me.getY());
+	        }
+	    });
+	}
+	
     }
