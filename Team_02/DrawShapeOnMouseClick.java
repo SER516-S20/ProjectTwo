@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 import javax.swing.JPanel;
 
@@ -23,20 +24,37 @@ public class DrawShapeOnMouseClick extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private Map<Point, String> shapeOrigin;
-	private String shapeName = "rectangle";
-	private String draggedShapeName = shapeName;
+	private String selectedShapeName;
+	private String draggedShapeName = "";
 
 	public DrawShapeOnMouseClick() {
-
 		shapeOrigin = new HashMap<>();
-		this.setPreferredSize(new Dimension(1000, 1000));
+		this.setPreferredSize(new Dimension(1600, 800));
+                this.setVisible(true);
 		addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				shapeOrigin.put(new Point(e.getX(), e.getY()), shapeName);
+                         try{
+                            selectedShapeName = ClickedShape.shapeName;
+                         }
+                         catch(Exception e1)
+                        {
+                            JOptionPane.showMessageDialog(null, e1);
+                        }
+                            // JOptionPane.showMessageDialog(null, selectedShapeName);
+                               if(selectedShapeName.isEmpty()|| (selectedShapeName==null)){
+                                   System.out.println("selectedShapeName");
+                                    JOptionPane.showMessageDialog(null, "Please select a shape");
+                               }
+                               else
+                        {
+                            
+                            //selectedShapeName = "Circle";
+				shapeOrigin.put(new Point(e.getX(), e.getY()), selectedShapeName);
 				repaint();
 			}
+                        }
 
 			@Override
 			public void mousePressed(MouseEvent e) {
