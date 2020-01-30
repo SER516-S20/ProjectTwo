@@ -6,6 +6,8 @@ import java.awt.event.MouseMotionListener;
 
 public class RightPanel implements Panel {
     JPanel panel;
+    final int[] X = new int[1];
+    final int[] Y = new int[1];
 
     RightPanel() {
         panel = new JPanel();
@@ -15,9 +17,6 @@ public class RightPanel implements Panel {
 
     }
 
-    final int[] X = new int[1];
-    final int[] Y = new int[1];
-    
     public void drag(JPanel shape){
         shape.addMouseMotionListener(new MouseMotionListener() {
             @Override
