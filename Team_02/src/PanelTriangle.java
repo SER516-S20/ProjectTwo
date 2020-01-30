@@ -35,9 +35,9 @@ public class PanelTriangle extends JPanel {
 	}
 	public void paintComponent(Graphics objGraphics) {
 		Path2D path = new Path2D.Double();
-		path.moveTo(120, 140);
-		path.lineTo(80, 60);
-		path.lineTo(160, 60);
+		path.moveTo(120, 60);
+		path.lineTo(80, 140);
+		path.lineTo(160, 140);
 		path.closePath();
 		Graphics2D obj2D = (Graphics2D) objGraphics;
 		obj2D.draw(path);

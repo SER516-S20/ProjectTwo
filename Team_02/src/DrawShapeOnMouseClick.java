@@ -29,42 +29,7 @@ public class DrawShapeOnMouseClick extends JPanel {
 		shapeOrigin = new HashMap<>();
 		this.setPreferredSize(new Dimension(1600, 800));
 		this.setVisible(true);
-		addMouseListener(new MouseAdapter() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				try {
-					selectedShapeName = ClickedShape.shapeName;
-				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, e1);
-				}
-				if (selectedShapeName.isEmpty() || (selectedShapeName == null)) {
-					System.out.println("selectedShapeName");
-					JOptionPane.showMessageDialog(null, "Please select a shape");
-				} else {
-
-					shapeOrigin.put(new Point(e.getX(), e.getY()), selectedShapeName);
-					repaint();
-				}
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				for (Point p1 : shapeOrigin.keySet()) {
-					if (new Rectangle2D.Double(e.getX() - 50, e.getY() - 50, 50, 50).contains(p1)) {
-						draggedShapeName = shapeOrigin.get(p1);
-						shapeOrigin.remove(p1);
-						break;
-					}
-				}
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				shapeOrigin.put(new Point(e.getX(), e.getY()), draggedShapeName);
-				repaint();
-			}
-		});
+		addMouseListener(new DrawBoardMouseListener());
 
 	}
 
@@ -78,16 +43,54 @@ public class DrawShapeOnMouseClick extends JPanel {
 		for (Point p1 : shapeOrigin.keySet()) {
 			String currShape = shapeOrigin.get(p1);
 			if (currShape.equalsIgnoreCase("rectangle")) {
-				g2.drawRect(p1.x, p1.y, 50, 50);
+				g2.drawRect(p1.x, p1.y, 100, 80);
+			} else if (currShape.equalsIgnoreCase("square")) {
+				g2.drawRect(p1.x, p1.y, 80, 80);
 			} else if (currShape.equalsIgnoreCase("circle")) {
-				g2.drawOval(p1.x, p1.y, 50, 50);
+				g2.drawOval(p1.x, p1.y, 80, 80);
 			} else if (currShape.equalsIgnoreCase("triangle")) {
-				g2.drawPolygon(new int[] { p1.x - 25, p1.x, p1.x + 25 }, new int[] { p1.y + 25, p1.y - 25, p1.y + 25 },
-						3);
+				g2.drawPolygon(new int[] { p1.x - 40, p1.x, p1.x + 40 },
+						new int[] { p1.y + 40, p1.y - 40, p1.y + 40 }, 3);
 			} else {
 				System.out.println("Shape not selected");
 			}
 		}
 
+	}
+
+	private class DrawBoardMouseListener extends MouseAdapter {
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			try {
+				selectedShapeName = ClickedShape.shapeName;
+			} catch (Exception e1) {
+				JOptionPane.showMessageDialog(null, e1);
+			}
+			if (selectedShapeName.isEmpty() || (selectedShapeName == null)) {
+				System.out.println("selectedShapeName");
+				JOptionPane.showMessageDialog(null, "Please select a shape");
+			} else {
+
+				shapeOrigin.put(new Point(e.getX(), e.getY()), selectedShapeName);
+				repaint();
+			}
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			for (Point p1 : shapeOrigin.keySet()) {
+				if (new Rectangle2D.Double(e.getX() - 50, e.getY() - 50, 50, 50).contains(p1)) {
+					draggedShapeName = shapeOrigin.get(p1);
+					shapeOrigin.remove(p1);
+					break;
+				}
+			}
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			shapeOrigin.put(new Point(e.getX(), e.getY()), draggedShapeName);
+			repaint();
+		}
 	}
 }
