@@ -10,8 +10,9 @@ import javax.swing.*;
 /**
  *
  * @author Kunal Sharma
- * created - 01-27-2020
+ * created on 01-27-2020
  */
+
 public class MainWindow {
     public static void main(String[] args)
     {
@@ -22,6 +23,10 @@ public class MainWindow {
        // ToolKit objToolKit =new ToolKit();
        // frame.add(ToolKit);
        // objDraw.drawing();
+        
+        DrawBoardPanel objDrawBoard = new DrawBoardPanel();
+        frame.add(objDrawBoard);
+        
     }
     
 }
