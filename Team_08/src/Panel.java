@@ -1,18 +1,10 @@
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import Shapes.OvalShape;
 import Shapes.RectangleShape;
 import Shapes.Shape;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 
 public class Panel {
     OvalShape ovalShape = new OvalShape();
