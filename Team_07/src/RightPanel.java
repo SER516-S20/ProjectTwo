@@ -13,6 +13,25 @@ public class RightPanel implements Panel {
 
     }
 
+    final int[] X = new int[1];
+    final int[] Y = new int[1];
+    
+    public void drag(JPanel shape){
+        shape.addMouseMotionListener(new MouseMotionListener() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                shape.setLocation(e.getXOnScreen() + X[0],
+                        e.getYOnScreen() + Y[0]);
+            }
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                X[0] = shape.getX() - e.getXOnScreen();
+                Y[0] = shape.getY() - e.getYOnScreen();
+
+            }
+        });
+    }
+    
     public void makeShapes(JPanel panel) {
         panel.addMouseListener(new MouseListener() {
             @Override
@@ -26,6 +45,8 @@ public class RightPanel implements Panel {
                 panel.add(shape);
                 panel.setBackground(Color.RED);
                 System.out.println("Touched");
+                drag(shape);
+
             }
 
             @Override
