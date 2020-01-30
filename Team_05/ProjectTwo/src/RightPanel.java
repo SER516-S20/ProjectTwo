@@ -4,10 +4,12 @@ import java.awt.event.MouseAdapter;
 import java.util.Hashtable;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class RightPanel extends JPanel{
 	private Hashtable<Integer, JButton> shapes;
+	private Frame frame;
 	
 	public RightPanel() {
 		shapes = new Hashtable<Integer, JButton>();
@@ -19,7 +21,7 @@ public class RightPanel extends JPanel{
 		round.addMouseListener(new MouseAdapter() {});
 		shapes.put(round.hashCode(),round);
 		this.add(round);
-		this.repaint();
+		frame.contentRepaint();
 		System.out.println("AddedRound");
 	}
 	
@@ -43,5 +45,10 @@ public class RightPanel extends JPanel{
 	{
 		this.remove(shapes.get(hashCode));
 		shapes.remove(hashCode);
+	}
+	
+	public void SetFrame(Frame frame)
+	{
+		this.frame = frame;
 	}
 }

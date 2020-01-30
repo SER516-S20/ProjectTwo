@@ -14,6 +14,7 @@ public class LeftPanelMouse extends MouseAdapter{
 	}
 	
 	public void mouseClicked(MouseEvent e) {
+		System.out.println(rightPanel == null);
 		String button = e.getSource().getClass().getName();
 		if(button == "RoundButton") {
 			RoundButton instance = new RoundButton("");

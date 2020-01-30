@@ -23,8 +23,12 @@ public class Frame extends JFrame{
 		this.setMinimumSize(new Dimension(800, 500));
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 
 		//add panels to the frame
+		leftPanel = new LeftPanel();
+		rightPanel = new RightPanel();
+		rightPanel.SetFrame(this);
 		this.getContentPane().add(createLeftPanel());
 		this.getContentPane().add(createRightPanel());
 		
@@ -34,7 +38,7 @@ public class Frame extends JFrame{
 	}
 	
 	private JPanel createLeftPanel() {
-		leftPanel = new LeftPanel();
+		
 		leftPanel.setSize(this.getWidth() / 5, this.getHeight());
 		leftPanel.setBackground(lBackground);
 		leftPanel.SetMouseAdapter_RoundButton(new LeftPanelMouse(rightPanel));
@@ -45,14 +49,14 @@ public class Frame extends JFrame{
 	}
 	
 	private JPanel createRightPanel() {
-		rightPanel = new RightPanel();
+		
 		rightPanel.setSize(this.getWidth() - this.getWidth() / 5, this.getHeight());
 		rightPanel.setBackground(rBackground);
 		
 		return rightPanel;
 	}
 	
-	private void contentRepaint() {
+	public void contentRepaint() {
 		getContentPane().revalidate();
 		getContentPane().repaint();	
 	}
