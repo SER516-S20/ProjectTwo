@@ -11,8 +11,22 @@ public class RightPanel extends JPanel{
 	public RightPanel() {
 		
 	}
-	public void AddR() {
+	public void AddRound() {
 		
 	}
 	
+	public void AddTriangle()
+	{
+		
+	}
+	
+	public void AddRectangle()
+	{
+		
+	}
+	
+	public void DeleteShape(int hashCode)
+	{
+		
+	}
 }
