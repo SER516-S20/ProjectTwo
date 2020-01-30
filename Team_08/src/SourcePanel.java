@@ -16,20 +16,15 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class SourcePanel extends Application {
     private int shapeCount = 0;
     private Canvas canvas;
-    private Color currentColor = Color.RED;
-    private Shape[] shapes = new Shape[500];
+    private Color currentColor = Color.BLACK;
+    private Shape[] shapes = new Shape[1000];
     public Shape currentShape;
     private boolean dragging = false;
-    List<Double> xValues = new ArrayList<Double>();
-    List<Double> yValues = new ArrayList<Double>();
-
 
     public static void main(String[] args) {
         launch(args);
@@ -48,7 +43,7 @@ public class SourcePanel extends Application {
         root.setLeft(makeToolPanel(canvas));
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Project02 Team XX");
+        stage.setTitle("Project02 Team 08");
         stage.setResizable(false);
         stage.show();
     }
@@ -66,14 +61,14 @@ public class SourcePanel extends Application {
     private VBox makeToolPanel(Canvas canvas) {
 
         FileInputStream circleImage = null, rectangleImage = null,
-                        squareImage = null,ellipseImage=null,triangleImage=null;
+                squareImage = null, ellipseImage = null, triangleImage = null;
         try {
             circleImage = new FileInputStream("Team_08/src/Image/circle.png");
             rectangleImage = new FileInputStream("Team_08/src/Image/rectangle.png");
             squareImage = new FileInputStream("Team_08/src/Image/square.png");
             ellipseImage = new FileInputStream("Team_08/src/Image/ellipse.png");
             //To be implemented
-            //triangleImage = new FileInputStream("");
+            triangleImage = new FileInputStream("Team_08/src/Image/triangle.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -92,10 +87,10 @@ public class SourcePanel extends Application {
         Button squareButton = new Button("", imageView);
         squareButton.setOnAction((e) -> addShape(new SquareShape(), 10, 250, 75, 75));
 
-        image = new Image(ellipseImage);
+        image = new Image(triangleImage);
         imageView = new ImageView(image);
-        Button ellipseButton = new Button("", imageView);
-        ellipseButton.setOnAction((e) -> addShape(new EllipseShape(), 10, 350, 100, 50));
+        Button triangleButton = new Button("", imageView);
+        triangleButton.setOnAction((e) -> addShape(new TriangleShape(), 90, 450, 100, 50));
 
         ComboBox<String> combobox = new ComboBox<>();
         combobox.setEditable(false);
@@ -111,7 +106,8 @@ public class SourcePanel extends Application {
         tools.getChildren().add(ovalButton);
         tools.getChildren().add(rectButton);
         tools.getChildren().add(squareButton);
-        tools.getChildren().add(ellipseButton);
+        //tools.getChildren().add(ellipseButton);
+        tools.getChildren().add(triangleButton);
         tools.getChildren().add(combobox);
         tools.setStyle("-fx-border-width: 3px; -fx-border-color: transparent; -fx-background-color: white");
         return tools;
@@ -178,7 +174,6 @@ public class SourcePanel extends Application {
     }
 
     private void mouseClicked(MouseEvent evt) {
-        GraphicsContext gc = canvas.getGraphicsContext2D();
         if (dragging) {
             dragging = false;
             return;
@@ -191,6 +186,9 @@ public class SourcePanel extends Application {
             addShape(new SquareShape(), (int) evt.getX(), (int) evt.getY(), 75, 75);
         else if (currentShape.toString().contains("Ellipse"))
             addShape(new EllipseShape(), (int) evt.getX(), (int) evt.getY(), 100, 50);
+        else if (currentShape.toString().contains("Triangle")) {
+            addShape(new TriangleShape(), (int) evt.getX(), (int) evt.getY(), 100, 50);
+        }
     }
 
     private void mouseReleased(MouseEvent evt) {
