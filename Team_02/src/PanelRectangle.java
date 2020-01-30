@@ -1,7 +1,7 @@
 
 /**
  * @author Suryadeep
- * Created on 01-27-2020
+ * @created on 01-27-2020
  */
 
 import java.awt.Graphics;
@@ -12,7 +12,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 public class PanelRectangle extends JPanel {
 	private static final long serialVersionUID = 1L;
 
