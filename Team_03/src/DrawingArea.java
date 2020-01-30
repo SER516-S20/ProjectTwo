@@ -1,3 +1,6 @@
+import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
+import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseMotionListener;
+
 public class DrawingArea extends JPanel {
 
 	static ArrayList<Shape> listOfShapes = new ArrayList<>();
@@ -6,8 +9,10 @@ public class DrawingArea extends JPanel {
 	DrawingArea() {
 
 		this.setBackground(Color.WHITE);
-
 		this.setPreferredSize(new Dimension(800, 600));
+        MouseListener ml = new MouseListener();
+        addMouseListener(ml);
+        addMouseMotionListener(ml);
 
 
 	}
