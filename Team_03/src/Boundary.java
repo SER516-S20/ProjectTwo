@@ -4,7 +4,7 @@ public class Boundary {
 
 	/*
 	 * The method is used to check whether the click(mouse click) is inside circle
-	 * or square
+	 * ,square or triangle
 	 */
 	boolean polygonCheck(int x1, int y1, int x2, int y3, int x, int y) {
 		if (x >= x1 && x <= x2 && y >= y1 && y <= y3) {
