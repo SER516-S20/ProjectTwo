@@ -7,11 +7,6 @@ import java.awt.*;
  */
 
 public class Square extends JPanel {
-    public void init() {
-        setSize(200, 200);
-        setVisible(true);
-    }
-
     public void paint(Graphics g) {
         int[] x = {50, 150, 150, 50};
         int[] y = {50, 50, 150, 150};

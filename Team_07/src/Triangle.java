@@ -13,5 +13,4 @@ public class Triangle extends JPanel {
         g.setColor(new Color(90, 200, 250));
         g.fillPolygon(x, y, numberofpoints);
     }
-
 }
