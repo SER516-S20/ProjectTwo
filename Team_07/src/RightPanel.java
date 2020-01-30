@@ -8,7 +8,7 @@ public class RightPanel implements Panel {
     RightPanel() {
         panel = new JPanel();
         panel.setBounds(200, 0, 800, 800);
-        panel.setBackground(new Color(200, 200, 200));
+        panel.setBackground(Color.GRAY);
         makeShapes(panel);
 
     }
@@ -18,12 +18,14 @@ public class RightPanel implements Panel {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 JPanel shape = new Triangle();
-                System.out.println(mouseEvent.getX() + " " + mouseEvent.getY());
+                if (mainFrame.selectedShape.contains("Square"))
+                    shape = new Square();
+                else if (mainFrame.selectedShape.contains("Circle"))
+                    shape = new Circle();
+                shape.setBounds(mouseEvent.getX() - 100, mouseEvent.getY() - 100, mouseEvent.getX() + 100, mouseEvent.getY() + 100);
                 panel.add(shape);
-                panel.setLayout(null);
-                panel.setBackground(Color.white);
-                System.out.println("asdk");
-
+                panel.setBackground(Color.RED);
+                System.out.println("Touched");
             }
 
             @Override

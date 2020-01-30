@@ -24,6 +24,7 @@ public class makeDraggable {
         button.setBounds(200, 200, 200, 200);
         button.setBackground(Color.RED);
 
+//        \_____________
         final int[] X = new int[1];
         final int[] Y = new int[1];
 
@@ -40,7 +41,7 @@ public class makeDraggable {
                 Y[0] = button.getY() - mouseEvent.getYOnScreen();
             }
         });
-
+//      \________________
         panel.add(button);
         jFrame.add(panel);
         jFrame.setLayout(null);
