@@ -13,7 +13,7 @@ public class RightPanel extends JPanel{
 	
 	public RightPanel() {
 		shapes = new Hashtable<Integer, JButton>();
-		
+		//this.setLayout(null);
 	}
 	public void AddRound() {
 		RoundButton round = new RoundButton("");
@@ -51,5 +51,11 @@ public class RightPanel extends JPanel{
 	public void SetFrame(Frame frame)
 	{
 		this.frame = frame;
+	}
+	
+	public void SetShapeLocation(int hashCode, int x, int y)
+	{
+		shapes.get(hashCode).setLocation(x,y);
+		frame.contentRepaint();
 	}
 }
