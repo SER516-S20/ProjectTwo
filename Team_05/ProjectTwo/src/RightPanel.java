@@ -17,7 +17,7 @@ public class RightPanel extends JPanel{
 	}
 	public void AddRound() {
 		RoundButton round = new RoundButton("");
-		round.addMouseListener(new MouseAdapter() {});
+		round.addMouseListener(new RightPanelMouse(this, round, null, null) {});
 		shapes.put(round.hashCode(),round);
 		this.add(round);
 		frame.contentRepaint();
@@ -26,7 +26,7 @@ public class RightPanel extends JPanel{
 	public void AddTriangle()
 	{
 		TriangleButton triangle = new TriangleButton("");
-		triangle.addMouseListener(new MouseAdapter() {});
+		triangle.addMouseListener(new RightPanelMouse(this, null, triangle, null) {});
 		shapes.put(triangle.hashCode(),triangle);
 		this.add(triangle);
 		frame.contentRepaint();
@@ -35,7 +35,7 @@ public class RightPanel extends JPanel{
 	public void AddRectangle()
 	{
 		RectangleButton rectangle = new RectangleButton("");
-		rectangle.addMouseListener(new MouseAdapter() {});
+		rectangle.addMouseListener(new RightPanelMouse(this, null, null, rectangle) {});
 		shapes.put(rectangle.hashCode(),rectangle);
 		this.add(rectangle);
 		frame.contentRepaint();
