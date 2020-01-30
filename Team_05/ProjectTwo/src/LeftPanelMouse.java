@@ -1,4 +1,5 @@
-//ShihYuChang Leftmouse funtion
+//@author:ShihYuChang 
+//Leftmouse funtion
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
