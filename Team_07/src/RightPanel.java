@@ -4,6 +4,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+/*
+ * @author Karandeep Singh Grewal
+ * @author Praveen
+ * @since 01-29-2020
+ */
+
+//right panel where we create shapes
 public class RightPanel implements Panel {
     JPanel panel;
     final int[] X = new int[1];
@@ -18,15 +25,27 @@ public class RightPanel implements Panel {
 
     }
 
-
+    //makes the shape draggable
     public void drag(JPanel shape) {
         final int[] X = new int[1];
         final int[] Y = new int[1];
         shape.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                shape.setLocation(e.getXOnScreen() + X[0],
-                        e.getYOnScreen() + Y[0]);
+                int final_x = e.getXOnScreen() + X[0];
+                int final_y = e.getYOnScreen() + Y[0];
+                if (final_x > 650) {
+                    final_x = 650;
+                } else if (final_x < -50) {
+                    final_x = -50;
+                }
+                if (final_y > 625) {
+                    final_y = 625;
+                } else if (final_y < -50) {
+                    final_y = -50;
+                }
+                shape.setLocation(final_x,
+                        final_y);
             }
 
             @Override
@@ -36,23 +55,23 @@ public class RightPanel implements Panel {
             }
         });
     }
-    
+
+    //creates the shape when we click on the mouse location
     public void makeShapes(JPanel panel) {
         panel.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 JPanel shape = new Triangle();
-                if (mainFrame.selectedShape.contains("Square"))
+                if (mainWindow.selectedShape.contains("Square"))
                     shape = new Square();
-                if (mainFrame.selectedShape.contains("Circle"))
+                if (mainWindow.selectedShape.contains("Circle"))
                     shape = new Circle();
-                shape.setBounds(mouseEvent.getX() - 50, mouseEvent.getY() - 50, mouseEvent.getX() + 50, mouseEvent.getY() + 50);
+                int mouseLocationX = mouseEvent.getX();
+                int mouseLocationY = mouseEvent.getY();
+                shape.setBounds(mouseLocationX - 50, mouseLocationY - 50, mouseLocationX + 50, mouseLocationY + 50);
                 panel.add(shape);
                 panel.revalidate();
                 panel.repaint();
-                panel.setBackground(Color.WHITE);
-                System.out.println("Touched");
-                System.out.println(panel);
                 drag(shape);
             }
 

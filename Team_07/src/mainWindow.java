@@ -5,8 +5,9 @@ import javax.swing.*;
  * @since 01-26-2020
  */
 
-public class mainFrame extends JFrame {
+public class mainWindow extends JFrame {
     static String selectedShape = "None";
+
     public static void main(String[] args) {
         JFrame mainWindow = new JFrame("SER516-Project-Team07");
         mainWindow.setSize(1000, 800);

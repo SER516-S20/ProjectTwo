@@ -6,10 +6,12 @@ import java.awt.*;
  * @since 01-29-2020
  */
 
+
 public class Circle extends JPanel {
-	public void paint(Graphics g) {
-		int diameter = 50 * 2;
-		g.setColor(new Color(255, 149, 0));
-		g.fillOval(50, 50, diameter, diameter);
-	}
+    public void paint(Graphics g) {
+        int diameter = 50 * 2;
+        Color orange = new Color(255, 149, 0);
+        g.setColor(orange);
+        g.fillOval(50, 50, diameter, diameter);
+    }
 }

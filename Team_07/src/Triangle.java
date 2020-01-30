@@ -5,6 +5,7 @@ import java.awt.*;
  * @author Aravind Thillai Villalan
  * @since 01-29-2020
  */
+
 public class Triangle extends JPanel {
     public void paint(Graphics g) {
         int[] x = {50, 100, 150};

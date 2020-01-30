@@ -3,7 +3,13 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/*
+ * @author Karandeep Singh Grewal
+ * @author Aditya Bajaj
+ * @since 01-29-2020
+ */
 
+//left panel from where we select shapes
 public class LeftPanel implements Panel {
     JPanel panel;
 
@@ -26,12 +32,15 @@ public class LeftPanel implements Panel {
         }
     }
 
+    /*
+     *Adds onClick Listener to the Shape
+     *Shape is stored in mainFrame.java/selectedShape
+     */
     public void selectShape(JPanel shape) {
         shape.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                mainFrame.selectedShape = shape.toString().substring(0, shape.toString().indexOf('['));
-                System.out.println(mainFrame.selectedShape);
+                mainWindow.selectedShape = shape.toString().substring(0, shape.toString().indexOf('['));
             }
 
             @Override
