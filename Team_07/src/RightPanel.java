@@ -45,7 +45,7 @@ public class RightPanel implements Panel {
                     shape = new Circle();
                 shape.setBounds(mouseEvent.getX() - 100, mouseEvent.getY() - 100, mouseEvent.getX() + 100, mouseEvent.getY() + 100);
                 panel.add(shape);
-                panel.setBackground(Color.RED);
+                panel.setBackground(Color.WHITE);
                 System.out.println("Touched");
                 drag(shape);
 
