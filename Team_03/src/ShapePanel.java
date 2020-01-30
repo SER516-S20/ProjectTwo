@@ -18,6 +18,7 @@ public class ShapePanel extends JPanel {
         this.add(constructCircle(), BorderLayout.NORTH);
         this.add(constructSquare(), BorderLayout.CENTER);
         this.add(constructTriangle(), BorderLayout.SOUTH);
+        addIconsToPanel();
         new JButtonActionListener().addActionListener();
     }
 
@@ -56,5 +57,16 @@ public class ShapePanel extends JPanel {
         triangleButton.setOpaque(true);
         return triangleButton;
     }
+     /*
+     The function is used to set icons (triangle, circle, square) 
+     to panels on the left
+     */
+    public void addIconsToPanel() {
+
+		circleButton.setIcon(new CircleIcon());
+		triangleButton.setIcon(new TriangleIcon());
+		squareButton.setIcon(new SquareIcon());
+
+	}
 
 }
