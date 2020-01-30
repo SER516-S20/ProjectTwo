@@ -5,7 +5,7 @@ import javax.swing.*;
  * @since 01-26-2020
  */
 
-public class mainWindow extends JFrame {
+public class MainWindow extends JFrame {
     static String selectedShape = "None";
 
     public static void main(String[] args) {

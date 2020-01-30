@@ -34,13 +34,13 @@ public class LeftPanel implements Panel {
 
     /*
      *Adds onClick Listener to the Shape
-     *Shape is stored in mainFrame.java/selectedShape
+     *Shape is stored in MainWindow.java/selectedShape
      */
     public void selectShape(JPanel shape) {
         shape.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                mainWindow.selectedShape = shape.toString().substring(0, shape.toString().indexOf('['));
+                MainWindow.selectedShape = shape.toString().substring(0, shape.toString().indexOf('['));
             }
 
             @Override

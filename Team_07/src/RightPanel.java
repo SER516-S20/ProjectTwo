@@ -60,9 +60,9 @@ public class RightPanel implements Panel {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 JPanel shape = new Triangle();
-                if (mainWindow.selectedShape.contains("Square"))
+                if (MainWindow.selectedShape.contains("Square"))
                     shape = new Square();
-                if (mainWindow.selectedShape.contains("Circle"))
+                if (MainWindow.selectedShape.contains("Circle"))
                     shape = new Circle();
                 int mouseLocationX = mouseEvent.getX();
                 int mouseLocationY = mouseEvent.getY();
