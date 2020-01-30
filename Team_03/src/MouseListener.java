@@ -60,6 +60,10 @@ class MouseListener extends MouseInputAdapter {
 				Circle circle = (Circle) object;
 				circle.setPosition(cordinateX, cordinateY);
 				Frame.drawingArea.repaint();
+			} else if (object instanceof Triangle) {
+				Triangle triangle = (Triangle) object;
+				triangle.setPosition(cordinateX, cordinateY);
+				Frame.drawingArea.repaintOnDrag();
 			}
 		}
 

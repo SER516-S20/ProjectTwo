@@ -28,11 +28,20 @@ public class Boundary {
 				}
 			} else if (object instanceof Circle) {
 				Circle circle = (Circle) object;
-				int squareX = circle.getCordinateX();
-				int squareY = circle.getCordinateY();
-				if (polygonCheck(squareX, squareY, squareX + circle.CIRCLE_WIDTH, squareY + circle.CIRCLE_HEIGHT,
+				int circleX = circle.getCordinateX();
+				int circleY = circle.getCordinateY();
+				if (polygonCheck(circleX, circleY, circleX + circle.CIRCLE_WIDTH, circleY + circle.CIRCLE_HEIGHT,
 						cordinateX, cordinateY)) {
 					selectedObject = circle;
+					return true;
+				}
+			} else if (object instanceof Triangle) {
+				Triangle triangle = (Triangle) object;
+				int triangleX = triangle.getCordinateX();
+				int triangleY = triangle.getCordinateY();
+				if (polygonCheck(triangleX - triangle.TRIANGLE_SIZE, triangleY, triangleX + triangle.TRIANGLE_SIZE,
+						triangleY + triangle.TRIANGLE_SIZE, cordinateX, cordinateY)) {
+					selectedObject = triangle;
 					return true;
 				}
 			}
