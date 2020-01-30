@@ -1,3 +1,6 @@
+/*
+ *@author Ashutosh Dey
+ */
 public class TriangleIcon implements Icon {
     public final int POSITION_DEVIATION = 0;
 
