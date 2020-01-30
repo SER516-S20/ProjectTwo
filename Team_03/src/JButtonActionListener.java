@@ -32,7 +32,6 @@ public class JButtonActionListener {
 
     public void deActivateCirclePanel() {
         isCirclePanelClicked = false;
-
         ShapePanel.circleButton.setBackground(Color.GRAY);
         ShapePanel.circleButton.setOpaque(true);
     }
@@ -46,7 +45,6 @@ public class JButtonActionListener {
 
     public void deActivateSquarePanel() {
         isSquarePanelClicked = false;
-
         ShapePanel.squareButton.setBackground(Color.GRAY);
         ShapePanel.squareButton.setOpaque(true);
     }
@@ -60,7 +58,6 @@ public class JButtonActionListener {
 
     public void deActivateTrianglePanel() {
         isTrianglePanelClicked = false;
-
         ShapePanel.triangleButton.setBackground(Color.GRAY);
         ShapePanel.triangleButton.setOpaque(true);
     }
