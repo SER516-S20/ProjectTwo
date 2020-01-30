@@ -1,23 +1,23 @@
-import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
-
 import javax.swing.JPanel;
 
 public class LeftPanel extends JPanel
 {
+	private static final long serialVersionUID = 1L;
 	private RoundButton roundButton = new RoundButton("Round");
 	private TriangleButton triangleButton = new TriangleButton("Triangle");
 	private RectangleButton rectangleButton = new RectangleButton("Rectangle");
+	private Dimension buttonSize = new Dimension(100,100);
 	
 	public LeftPanel()
 	{
-		GridLayout gridLayout = new GridLayout(3,1);
+		roundButton.setPreferredSize(buttonSize);
+		triangleButton.setPreferredSize(buttonSize);
+		rectangleButton.setPreferredSize(buttonSize);
 		this.add(roundButton);
 		this.add(triangleButton);
 		this.add(rectangleButton);
-		this.setLayout(gridLayout);
 	}
 	
 	public void SetMouseAdapter_RoundButton(MouseAdapter adapter) 
