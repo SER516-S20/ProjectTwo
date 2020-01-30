@@ -15,7 +15,7 @@ public class Frame extends JFrame{
 	private static final String title = "ProjectTwo-Team 5";
 	private static final Color lBackground = new Color(255, 255, 240);
 	private static final Color rBackground = new Color(240, 255, 255);
-	private JPanel rightPanel;
+	private RightPanel rightPanel;
 	private LeftPanel leftPanel;
 	
 	public Frame() {
@@ -37,15 +37,15 @@ public class Frame extends JFrame{
 		leftPanel = new LeftPanel();
 		leftPanel.setSize(this.getWidth() / 5, this.getHeight());
 		leftPanel.setBackground(lBackground);
-		leftPanel.SetMouseAdapter_RoundButton(new MouseAdapter() {});
-		leftPanel.SetMouseAdapter_TriangleButton(new MouseAdapter() {});
-		leftPanel.SetMouseAdapter_RectangleButton(new MouseAdapter() {});
+		leftPanel.SetMouseAdapter_RoundButton(new LeftPanelMouse(rightPanel));
+		leftPanel.SetMouseAdapter_TriangleButton(new LeftPanelMouse(rightPanel));
+		leftPanel.SetMouseAdapter_RectangleButton(new LeftPanelMouse(rightPanel));
 		
 		return leftPanel;
 	}
 	
 	private JPanel createRightPanel() {
-		rightPanel = new JPanel();
+		rightPanel = new RightPanel();
 		rightPanel.setSize(this.getWidth() - this.getWidth() / 5, this.getHeight());
 		rightPanel.setBackground(rBackground);
 		

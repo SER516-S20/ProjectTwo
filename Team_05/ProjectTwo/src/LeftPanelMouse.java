@@ -9,15 +9,16 @@ public class LeftPanelMouse extends MouseAdapter{
 	private TriangleButton triangleButton = new TriangleButton("Triangle");
 	private RectangleButton rectangleButton = new RectangleButton("Rectangle");
 	private RightPanel rightPanel;
-	public LeftPanelMouse(JPanel rightPanel) {
-		this.rightPanel = (RightPanel) rightPanel;
+	public LeftPanelMouse(RightPanel rightPanel) {
+		this.rightPanel = rightPanel;
 	}
 	
 	public void mouseClicked(MouseEvent e) {
 		String button = e.getSource().getClass().getName();
 		if(button == "RoundButton") {
 			RoundButton instance = new RoundButton("");
-			rightPanel.AddR();
+			System.out.println("clicked");
+			rightPanel.AddRound();
 			
 		}
 		else if(button == "TriangleButton") {
@@ -26,11 +27,9 @@ public class LeftPanelMouse extends MouseAdapter{
 		else {
 			
 		}
-//		
-		
-		
-		
 	}
+	
+	
 	public void setRightPanel() {
 		
 	}

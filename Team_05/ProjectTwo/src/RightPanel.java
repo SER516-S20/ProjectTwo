@@ -14,10 +14,13 @@ public class RightPanel extends JPanel{
 		
 	}
 	public void AddRound() {
+		System.out.println("Adding Round");
 		RoundButton round = new RoundButton("");
 		round.addMouseListener(new MouseAdapter() {});
 		shapes.put(round.hashCode(),round);
 		this.add(round);
+		this.repaint();
+		System.out.println("AddedRound");
 	}
 	
 	public void AddTriangle()
