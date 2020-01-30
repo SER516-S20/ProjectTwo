@@ -9,6 +9,8 @@ import java.awt.*;
  */
 public class ShapePanel extends JPanel {
 
+    private static final int BUTTON_WIDTH = 190;
+    private static final int BUTTON_HEIGHT = 190;
     static JButton circleButton, squareButton, triangleButton ;
 
     ShapePanel() {
@@ -25,7 +27,7 @@ public class ShapePanel extends JPanel {
      */
     private JButton constructCircle() {
         circleButton = new JButton();
-        circleButton.setPreferredSize(new Dimension(190, 190));
+        circleButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         circleButton.setBackground(Color.GRAY);
         circleButton.setOpaque(true);
         return circleButton;
@@ -37,7 +39,7 @@ public class ShapePanel extends JPanel {
      */
     private JButton constructSquare() {
         squareButton = new JButton();
-        squareButton.setPreferredSize(new Dimension(190, 190));
+        squareButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         squareButton.setBackground(Color.GRAY);
         squareButton.setOpaque(true);
         return squareButton;
@@ -49,7 +51,7 @@ public class ShapePanel extends JPanel {
      */
     private JButton constructTriangle() {
         triangleButton = new JButton();
-        triangleButton.setPreferredSize(new Dimension(190, 190));
+        triangleButton.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         triangleButton.setBackground(Color.GRAY);
         triangleButton.setOpaque(true);
         return triangleButton;
