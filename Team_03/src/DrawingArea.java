@@ -1,3 +1,8 @@
+import javax.swing.*;
+
+import java.awt.*;
+import java.util.ArrayList;
+
 import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseMotionListener;
 

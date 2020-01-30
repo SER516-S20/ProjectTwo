@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+
 public class TriangleIcon implements Icon {
     public final int POSITION_DEVIATION = 0;
 

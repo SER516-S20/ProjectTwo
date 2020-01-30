@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+
 public class SquareIcon implements Icon {
     public final int POSITION_DEVIATION = 25;
 

@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+
 public class CircleIcon implements Icon {
     public final int POSITION_DEVIATION = 25;
 
