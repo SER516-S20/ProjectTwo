@@ -3,7 +3,7 @@ package Shapes;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class OvalShape extends Shape {
+public class EllipseShape extends Shape {
     public void draw(GraphicsContext g) {
         g.setFill(color);
         g.fillOval(left, top, width, height);
