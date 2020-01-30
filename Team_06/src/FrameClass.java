@@ -6,7 +6,7 @@ public class FrameClass extends JFrame{
 
 	private static final String[] PANEL_NAMES = {"LeftPanel", "RightPanel"};
 	
-	private JPanel[] panels = new JPanel[15];
+	public JPanel[] panels = new JPanel[15];
 	 
 	FrameClass(String name) {
 		this.setTitle(name);
@@ -27,7 +27,14 @@ public class FrameClass extends JFrame{
 	    for(int i = 0; i < PANEL_NAMES.length; i++) {
 		   try {
 			   Class<?> panelClass = Class.forName(PANEL_NAMES[i]);
-			   JPanel panel = (JPanel) panelClass.getDeclaredConstructor().newInstance();
+			   JPanel panel;
+			   if (i == 1) {
+				    panel = (JPanel) RightPanel.getInstance();
+
+			   }
+			   else{
+				    panel = (JPanel) panelClass.getDeclaredConstructor().newInstance();
+			   }
 			   panels[i] = panel;
 		   }catch(Exception e) {
 			   addError(PANEL_NAMES[i]);
