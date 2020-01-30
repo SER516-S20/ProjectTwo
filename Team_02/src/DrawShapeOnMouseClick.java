@@ -17,9 +17,7 @@ import java.awt.geom.Rectangle2D;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
-
 import javax.swing.JPanel;
-
 public class DrawShapeOnMouseClick extends JPanel {
 
 	private static final long serialVersionUID = 1L;
