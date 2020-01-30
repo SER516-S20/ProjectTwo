@@ -31,6 +31,7 @@ public class MainWindow {
         splitPane.setTopComponent(new PanelToolkit());
         splitPane.setBottomComponent(new DrawBoardPanel());
         frame.add(splitPane);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
     
 }
