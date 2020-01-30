@@ -1,20 +1,23 @@
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Shape;
-import java.awt.geom.Rectangle2D;
+import javax.swing.*;
+import java.awt.*;
 
 /*
  * @author Aravind Thillai Villalan
  * @since 01-29-2020
  */
 
-public class Square implements Shapes{
+public class Square extends JPanel {
+    public void init() {
+        setSize(200, 200);
+        setVisible(true);
+    }
 
-	@Override
-	public void drawShape(Graphics graphic, double x, double y) {
-		Shape square=new Rectangle2D.Double(x, y,150,150);
-		Graphics2D g2 = (Graphics2D) graphic;
-		g2.draw(square);
-	}
+    public void paint(Graphics g) {
+        int[] x = {50, 150, 150, 50};
+        int[] y = {50, 50, 150, 150};
+        int numberofpoints = 4;
+        g.setColor(new Color(76, 217, 100));
+        g.fillPolygon(x, y, numberofpoints);
+    }
 
 }

@@ -1,23 +1,17 @@
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.geom.Path2D;
+import javax.swing.*;
+import java.awt.*;
 
 /*
  * @author Aravind Thillai Villalan
  * @since 01-29-2020
  */
-public class Triangle implements Shapes {
-
-	@Override
-	public void drawShape(Graphics graphic, double x, double y) {
-		Path2D dot=new Path2D.Double();
-		dot.moveTo(x, y);
-		dot.lineTo(x+100, y-150);
-		dot.lineTo(x+200, y);
-		dot.closePath();
-		
-		Graphics2D g2 = (Graphics2D) graphic;
-		g2.draw(dot);
-	}
+public class Triangle extends JPanel {
+    public void paint(Graphics g) {
+        int[] x = {50, 100, 150};
+        int[] y = {150, 50, 150};
+        int numberofpoints = 3;
+        g.setColor(new Color(90, 200, 250));
+        g.fillPolygon(x, y, numberofpoints);
+    }
 
 }

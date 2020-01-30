@@ -1,21 +1,17 @@
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Shape;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Rectangle2D;
+import javax.swing.*;
+import java.awt.*;
 
 /*
  * @author Aravind Thillai Villalan
  * @since 01-29-2020
  */
 
-public class Circle implements Shapes{
-	
-	@Override
-	public void drawShape(Graphics graphic, double x, double y) {
-		Shape circle=new Ellipse2D.Double(x, y, 150, 150);
-		Graphics2D g2 = (Graphics2D) graphic;
-		g2.draw(circle);
+public class Circle extends JPanel {
+
+	public void paint(Graphics g) {
+		int diameter = 50 * 2;
+		g.setColor(new Color(255, 149, 0));
+		g.fillOval(50, 50, diameter, diameter);
 	}
 
 }
