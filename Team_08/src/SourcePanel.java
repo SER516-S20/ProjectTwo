@@ -72,22 +72,19 @@ public class SourcePanel extends Application {
 
         FileInputStream input = null;
 
-//        FileInputStream input = new FileInputStream("/Image/circle.png");
-//        Image image = new Image(input);
-//        ImageView imageView = new ImageView(image);
-//
-//        Button button = new Button("H", imageView);
-//        Scene scene = new Scene(button, 200, 100);
-
-        Image circleimage = new Image(getClass().getResourceAsStream("/Image/shape_cir.png"));
-        Button ovalButton = new Button("", new ImageView(circleimage));
+        Image circleImage = new Image(getClass().getResourceAsStream("/Image/shape_cir.png"));
+        Button ovalButton = new Button("", new ImageView(circleImage));
         ovalButton.setOnAction( (e) -> addShape( new OvalShape(),10,100,50,50 ));
 //        Button ovalButton = new Button("Circle");
 //        Button rectButton = new Button("Rectangle");
 
-        Image imageOk = new Image(getClass().getResourceAsStream("/Image/shape_squ.png"));
-        Button rectButton = new Button("", new ImageView(imageOk));
+        Image recImage = new Image(getClass().getResourceAsStream("/Image/shape_squ.png"));
+        Button rectButton = new Button("", new ImageView(recImage));
         rectButton.setOnAction( (e) -> addShape( new RectangleShape(),10,400,75,50 ) );
+
+        Image triImage = new Image(getClass().getResourceAsStream("/Image/shape_tri.png"));
+        Button triButton = new Button("", new ImageView(triImage));
+
         ComboBox<String> combobox = new ComboBox<>();
         combobox.setEditable(false);
         Color[] colors = { Color.RED, Color.GREEN, Color.BLUE, Color.CYAN,
@@ -99,10 +96,10 @@ public class SourcePanel extends Application {
         combobox.setOnAction(
                 e -> currentColor = colors[combobox.getSelectionModel().getSelectedIndex()] );
         VBox tools = new VBox(5);
-//        tools.getChildren().add(button3);
+
         tools.getChildren().add(ovalButton);
         tools.getChildren().add(rectButton);
-        //tools.getChildren().add(roundRectButton);
+        tools.getChildren().add(triButton);
         tools.getChildren().add(combobox);
         tools.setStyle("-fx-border-width: 3px; -fx-border-color: transparent; -fx-background-color: white");
         return tools;
@@ -135,7 +132,6 @@ public class SourcePanel extends Application {
     private int prevDragY;  //    previous position of the mouse.
 
     private void mousePressed(MouseEvent evt) {
-
         int x = (int)evt.getX();  // x-coordinate of point where mouse was clicked
         int y = (int)evt.getY();  // y-coordinate of point
         for ( int i = shapeCount - 1; i >= 0; i-- ) {  // check shapes from front to back
@@ -158,12 +154,10 @@ public class SourcePanel extends Application {
         }
     }
 
+    // User has moved the mouse.  Move the dragged shape by the same amount.
     private void mouseDragged(MouseEvent evt) {
-        // User has moved the mouse.  Move the dragged shape by the same amount.
         int count = 0;
 
-//        if(count >1)
-//            return;
         int x = (int)evt.getX();
         int y = (int)evt.getY();
         if (shapeBeingDragged != null) {
@@ -176,8 +170,8 @@ public class SourcePanel extends Application {
         }
     }
 
+    // User has clicked the mouse.
     private void mouseClicked(MouseEvent evt) {
-        // User has clicked the mouse.
         if(currentShape.toString().contains("Oval"))
             addShape(new OvalShape(),(int)evt.getX(),(int)evt.getY(),50,50 );
         else if(currentShape.toString().contains("Rect"))
@@ -185,9 +179,9 @@ public class SourcePanel extends Application {
 
     }
 
+    // User has released the mouse.  Move the dragged shape, then set
+    // shapeBeingDragged to null to indicate that dragging is over.
     private void mouseReleased(MouseEvent evt) {
-        // User has released the mouse.  Move the dragged shape, then set
-        // shapeBeingDragged to null to indicate that dragging is over.
         shapeBeingDragged = null;
     }
 }
