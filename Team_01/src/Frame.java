@@ -1,8 +1,13 @@
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Dimension;
+import java.awt.Shape;
+import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 /**
  * @author Chandan Kiragadalu Javaregowda
@@ -11,8 +16,13 @@ import javax.swing.JPanel;
 public class Frame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private final String title = "Team 1";
+	public static List<Shape> shapes = new ArrayList<>();
+	private static Map<Shape, ShapesEnum> shapesMap = new HashMap<>();
+	LeftPanel leftPanel;
+	RightPanel rightPanel;
+	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-	private Frame() {
+	public Frame() {
 		setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
 		setLayout(null);
 		setTitle(title);
@@ -26,19 +36,8 @@ public class Frame extends JFrame {
 	 */
 	private void createLeftPanel() {
 		try {
-			JPanel leftPanel = new JPanel() {
-				private static final long serialVersionUID = 1L;
-				public void paintComponent(Graphics g) {
-					super.paintComponent(g);
-					Shapes square = new Square();
-					square.drawShape(g, 50, 50);
-					Shapes circle = new Circle();
-					circle.drawShape(g, 50, 350);
-					Shapes triangle = new Triangle();
-					triangle.drawShape(g, 50, 800);
-				}
-			};
-			leftPanel.setBounds(0, 0, this.getWidth() / 4, this.getHeight());
+			leftPanel = new LeftPanel();
+			leftPanel.setBounds(0, 0, screenSize.width / 4, screenSize.height);
 			leftPanel.setVisible(true);
 			this.add(leftPanel);
 
@@ -53,13 +52,11 @@ public class Frame extends JFrame {
 	 */
 	private void createRightpanel() {
 		try {
-			JPanel rightPanel = new JPanel() {
-				private static final long serialVersionUID = 1L;
-			};
-			rightPanel.setBackground(Color.WHITE);
-			rightPanel.setBounds(this.getWidth() / 4, 0, 3 * this.getWidth() / 4, this.getHeight());
+			rightPanel = new RightPanel();
+			rightPanel.setBounds(screenSize.width / 4, 0, 3 * screenSize.width / 4, screenSize.height);
 			rightPanel.setVisible(true);
 			this.add(rightPanel);
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,17 +64,39 @@ public class Frame extends JFrame {
 	}
 
 	/**
-	 * @param args This method schedules a job for the event-dispatching thread.
-	 *             This method is responsible for creating and showing application's
-	 *             GUI.
+	 * Method to update shapes and shapesMap lists. Used to track the shapes created
+	 * and kind of shape created.
+	 * 
+	 * @param shape
+	 * @param shapesEnum
 	 */
+	public static void addShape(Shape shape, ShapesEnum shapesEnum) {
+		if (!getShapes().contains(shape)) {
+			getShapes().add(shape);
+			getShapesMap().put(shape, shapesEnum);
+		}
+	}
+
+	public static List<Shape> getShapes() {
+		return shapes;
+	}
+
+	public static void setShapes(List<Shape> shapes) {
+		Frame.shapes = shapes;
+	}
+
+	public static Map<Shape, ShapesEnum> getShapesMap() {
+		return shapesMap;
+	}
+
+	public static void setShapesMap(Map<Shape, ShapesEnum> shapesMap) {
+		Frame.shapesMap = shapesMap;
+	}
+
 	public static void main(String[] args) {
-		javax.swing.SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				Frame frame = new Frame();
-				frame.createLeftPanel();
-				frame.createRightpanel();
-			}
-		});
+		Frame frame = new Frame();
+		frame.createLeftPanel();
+		frame.createRightpanel();
+
 	}
 }
