@@ -16,13 +16,11 @@ public class RightPanel extends JPanel{
 		
 	}
 	public void AddRound() {
-		System.out.println("Adding Round");
 		RoundButton round = new RoundButton("");
 		round.addMouseListener(new MouseAdapter() {});
 		shapes.put(round.hashCode(),round);
 		this.add(round);
 		frame.contentRepaint();
-		System.out.println("AddedRound");
 	}
 	
 	public void AddTriangle()
@@ -31,6 +29,7 @@ public class RightPanel extends JPanel{
 		triangle.addMouseListener(new MouseAdapter() {});
 		shapes.put(triangle.hashCode(),triangle);
 		this.add(triangle);
+		frame.contentRepaint();
 	}
 	
 	public void AddRectangle()
@@ -39,12 +38,14 @@ public class RightPanel extends JPanel{
 		rectangle.addMouseListener(new MouseAdapter() {});
 		shapes.put(rectangle.hashCode(),rectangle);
 		this.add(rectangle);
+		frame.contentRepaint();
 	}
 	
 	public void DeleteShape(int hashCode)
 	{
 		this.remove(shapes.get(hashCode));
 		shapes.remove(hashCode);
+		frame.contentRepaint();
 	}
 	
 	public void SetFrame(Frame frame)
