@@ -13,7 +13,6 @@ import java.awt.geom.Ellipse2D;
 
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 public class PanelCircle extends JPanel {
 	private static final long serialVersionUID = 1L;
 
