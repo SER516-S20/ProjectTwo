@@ -15,9 +15,6 @@ import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-/**
- * @author surya create on 01-27-2020
- */
 
 public class PanelRectangle extends JPanel {
 	private static final long serialVersionUID = 1L;
