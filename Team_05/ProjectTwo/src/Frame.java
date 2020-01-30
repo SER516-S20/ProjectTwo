@@ -16,7 +16,7 @@ public class Frame extends JFrame{
 	private static final Color lBackground = new Color(255, 255, 240);
 	private static final Color rBackground = new Color(240, 255, 255);
 	private JPanel rightPanel;
-	private JPanel leftPanel;
+	private LeftPanel leftPanel;
 	
 	public Frame() {
 		this.setTitle(title);
@@ -32,45 +32,14 @@ public class Frame extends JFrame{
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
+	
 	private JPanel createLeftPanel() {
-		leftPanel = new JPanel();
+		leftPanel = new LeftPanel();
 		leftPanel.setSize(this.getWidth() / 5, this.getHeight());
 		leftPanel.setBackground(lBackground);
-		
-		RoundButton round = new RoundButton("round");
-		round.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				//System.out.println("click");
-				RoundButton instance = new RoundButton("");
-				rightPanel.add(instance);
-				contentRepaint();
-			}
-		});
-		
-		TriangleButton triangle = new TriangleButton("triangle");
-		triangle.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				TriangleButton instance = new TriangleButton("");
-				rightPanel.add(instance);
-				contentRepaint();
-			}
-		});
-		triangle.setText("triangle");
-		
-		RectangleButton rectangle = new RectangleButton("rectangle");
-		rectangle.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				RectangleButton instance = new RectangleButton("");
-				rightPanel.add(instance);
-				contentRepaint();
-			}
-		});
-		leftPanel.add(round);
-		leftPanel.add(triangle);
-		leftPanel.add(rectangle);
+		leftPanel.SetMouseAdapter_RoundButton(new MouseAdapter() {});
+		leftPanel.SetMouseAdapter_TriangleButton(new MouseAdapter() {});
+		leftPanel.SetMouseAdapter_RectangleButton(new MouseAdapter() {});
 		
 		return leftPanel;
 	}

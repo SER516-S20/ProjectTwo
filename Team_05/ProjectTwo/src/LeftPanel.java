@@ -1,4 +1,5 @@
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 
@@ -28,6 +29,7 @@ public class LeftPanel extends JPanel
 	{
 		triangleButton.addMouseListener(adapter);
 	}
+	
 	
 	public void SetMouseAdapter_RectangleButton(MouseAdapter adapter) 
 	{
