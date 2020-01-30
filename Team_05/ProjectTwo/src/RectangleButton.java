@@ -41,7 +41,6 @@ public class RectangleButton extends JButton{
 		}
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.fillRect(0, 0, getSize().width - 1,getSize().height - 1);
-		
 		super.paintComponent(g);
 	}
 
