@@ -1,7 +1,7 @@
 /**
- * @author Suryadeep Created on 01-27-2020
+ * @author Suryadeep 
+ * @created on 01-27-2020
  */
-
 public class ClickedShape {
 	public static String shapeName;
 
@@ -10,7 +10,6 @@ public class ClickedShape {
 			shapeName = clickedShape;
 			return clickedShape;
 		}
-
 		catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
