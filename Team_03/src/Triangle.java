@@ -17,6 +17,14 @@ public class Triangle implements Shape {
 
 	static final int NUMBER_OF_LINES = 3;
 	static final int TRIANGLE_SIZE = 30;
+	
+	public int getCordinateX() {
+		return cordinateX;
+	}
+
+	public int getCordinateY() {
+		return cordinateY;
+	}
 
 	@Override
 	public void setPosition(int x, int y) {

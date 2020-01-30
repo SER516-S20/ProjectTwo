@@ -17,6 +17,14 @@ public class Circle implements Shape {
 
 	private int cordinateX;
 	private int cordinateY;
+	
+	public int getCordinateX() {
+		return cordinateX;
+	}
+
+	public int getCordinateY() {
+		return cordinateY;
+	}
 
 	@Override
 	public void setPosition(int x, int y) {
