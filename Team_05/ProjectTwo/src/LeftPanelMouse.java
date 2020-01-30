@@ -9,7 +9,7 @@ public class LeftPanelMouse extends MouseAdapter{
 	public LeftPanelMouse(RightPanel rightPanel) {
 		this.rightPanel = rightPanel;
 	}
-	
+	//Create shape at the rightPanel
 	public void mouseClicked(MouseEvent e) {
 		String button = e.getSource().getClass().getName();
 		if(button == "RoundButton") {
