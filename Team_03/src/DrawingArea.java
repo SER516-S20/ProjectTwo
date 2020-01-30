@@ -12,7 +12,6 @@ public class DrawingArea extends JPanel {
 	static final int DRAWING_AREA_WIDTH = 600;
 
 	DrawingArea() {
-
 		this.setBackground(Color.WHITE);
 		this.setPreferredSize(new Dimension(DRAWING_AREA_HEIGHT, DRAWING_AREA_WIDTH));
 		MouseListener ml = new MouseListener();
@@ -21,13 +20,10 @@ public class DrawingArea extends JPanel {
 	}
 
 	@Override
-
 	protected void paintComponent(Graphics g) {
-
 		super.paintComponent(g);
 		for (int i = 0; i < listOfShapes.size(); i++) {
 			Object object = listOfShapes.get(i);
-
 			if (object instanceof Square) {
 				Square square = (Square) object;
 				square.draw(g);
