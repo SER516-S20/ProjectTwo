@@ -11,9 +11,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 public class RectangleButton extends JButton{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private Shape rectangle;
 	private Color foreground = new Color(178, 255, 102);
