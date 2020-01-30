@@ -1,12 +1,23 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Circle implements Shape{
+/**
+ * @author Nachiappan Lakshmanan
+ * @version 1.0
+ */
 
-	
+/*
+ * This class is used to create circle shape at a particular position for the
+ * given X and Y cordinate
+ */
+public class Circle implements Shape {
+
+	static final int CIRCLE_HEIGHT = 50;
+	static final int CIRCLE_WIDTH = 50;
+
 	private int cordX;
 	private int cordY;
-	
+
 	@Override
 	public void setPosition(int x, int y) {
 		this.cordX = x;
@@ -15,10 +26,10 @@ public class Circle implements Shape{
 
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.red);
-		g.drawOval(cordX, cordY,  10, 15);
-		g.fillRect(cordX, cordY, 10, 15);
-		
+		g.setColor(Color.RED);
+		g.drawOval(cordX, cordY, CIRCLE_HEIGHT, CIRCLE_WIDTH);
+		g.fillOval(cordX, cordY, CIRCLE_HEIGHT, CIRCLE_WIDTH);
+
 	}
 
 }
