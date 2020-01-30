@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 
 /*
  * @author Karandeep Singh Grewal
@@ -12,25 +11,16 @@ public class mainFrame extends JFrame {
         JFrame mainWindow = new JFrame("SER574-Project-Team07");
         mainWindow.setSize(1000, 800);
 
-        JPanel leftPanel = new JPanel();
-        leftPanel.setBounds(0, 0, 200, 800);
-        leftPanel.setBackground(Color.gray);
-        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
+        LeftPanel leftPanel = new LeftPanel();
+        RightPanel rightPanel = new RightPanel();
 
-        JPanel triangle = new Triangle();
-        leftPanel.add(triangle);
-        leftPanel.add(new Circle());
-        leftPanel.add(new Square());
+        mainWindow.add(leftPanel.panel);
+        mainWindow.add(rightPanel.panel);
 
-
-        JPanel rightPanel = new JPanel();
-        rightPanel.setBounds(200, 0, 800, 800);
-        rightPanel.setBackground(Color.WHITE);
-
-        mainWindow.add(rightPanel);
-        mainWindow.add(leftPanel);
         mainWindow.setLayout(null);
         mainWindow.setVisible(true);
+        mainWindow.setResizable(false);
+        mainWindow.setLocationRelativeTo(null);
     }
 }
 
