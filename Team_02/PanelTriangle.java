@@ -1,4 +1,3 @@
-package MouseListener;
 import javax.swing.JPanel;
 
 public class PanelTriangle extends JPanel {
