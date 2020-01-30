@@ -7,7 +7,7 @@ public class RightPanelMouse implements MouseListener, MouseMotionListener {
 	private int currentY;
 	private RightPanel rightPanel;
 	//private Frame frame;
-	public RightPanelMouse(Frame frame, RightPanel rightPanel) {
+	public RightPanelMouse(RightPanel rightPanel) {
 	
 		this.rightPanel = rightPanel;
 		//this.frame = frame;
