@@ -9,6 +9,11 @@ import java.awt.geom.Ellipse2D;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
+/**
+* @author Kai-Rui Hsu
+* This class can draw and create rectangle button.
+**/
+
 public class RectangleButton extends JButton{
 	private static final long serialVersionUID = 1L;
 	private Shape rectangle;
