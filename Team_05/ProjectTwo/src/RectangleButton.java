@@ -6,6 +6,8 @@ import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.awt.RenderingHints;
 import java.awt.Shape;
+import java.awt.geom.Ellipse2D;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
@@ -29,7 +31,7 @@ public class RectangleButton extends JButton{
 		setBorderPainted(false);
 		setContentAreaFilled(false);
 		setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
-		rectangle = createRectangle();
+		//rectangle = createRectangle();
 	}
 
 	protected void paintComponent(Graphics g) {
@@ -39,7 +41,8 @@ public class RectangleButton extends JButton{
 			g.setColor(foreground);
 		}
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.fill(rectangle);
+		g2d.fillRect(0, 0, getSize().width - 1,getSize().height - 1);
+		
 		super.paintComponent(g);
 	}
 
@@ -47,20 +50,15 @@ public class RectangleButton extends JButton{
 		g.setColor(this.getForeground());
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		g2d.draw(rectangle);
+		g2d.drawRect(0, 0, getSize().width - 1,getSize().height - 1);
 	}
 
 	public boolean contains(int x, int y) {
+		if (rectangle == null || 
+				!rectangle.getBounds().equals(getBounds())) {
+			rectangle = new Ellipse2D.Float(0, 0, getWidth(), getHeight());
+		}
 		return rectangle.contains(x, y);
-	}
-	private Shape createRectangle() {
-        Polygon p = new Polygon();
-        p.addPoint(0, 0);
-        p.addPoint(0, size.height - 30);
-        p.addPoint(size.width - 1, size.height - 30);
-        p.addPoint((size.width - 1), 0);
-        
-        return p;
 	}
 }
 
