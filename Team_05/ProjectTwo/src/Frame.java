@@ -23,7 +23,7 @@ public class Frame extends JFrame{
 		this.setLayout(null);
 		btnContainer = new LeftPanel();
 		dragArea = new RightPanel();
-		dragArea.SetFrame(this);
+		dragArea.setFrame(this);
 		this.getContentPane().add(createLeftPanel());
 		this.getContentPane().add(createRightPanel());
 		this.pack();
@@ -36,9 +36,9 @@ public class Frame extends JFrame{
 		btnContainer.setSize(200, 500);
 		btnContainer.setLocation(0, 0);
 		btnContainer.setBackground(lBackground);
-		btnContainer.SetMouseAdapter_RoundButton(new LeftPanelMouse(dragArea));
-		btnContainer.SetMouseAdapter_TriangleButton(new LeftPanelMouse(dragArea));
-		btnContainer.SetMouseAdapter_RectangleButton(new LeftPanelMouse(dragArea));
+		btnContainer.setRoundButtonMouseAdapter(new LeftPanelMouse(dragArea));
+		btnContainer.setTriangleButtonMouseAdapter(new LeftPanelMouse(dragArea));
+		btnContainer.setRectangleButtonMouseAdapter(new LeftPanelMouse(dragArea));
 		return btnContainer;
 	}
 	

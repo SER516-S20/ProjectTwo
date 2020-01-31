@@ -14,13 +14,13 @@ public class LeftPanelMouse extends MouseAdapter{
 	public void mouseClicked(MouseEvent e) {
 		String button = e.getSource().getClass().getName();
 		if(button == "RoundButton") {
-			rightPanel.AddRound();
+			rightPanel.addRound();
 		}
 		else if(button == "TriangleButton") {
-			rightPanel.AddTriangle();
+			rightPanel.addTriangle();
 		}
 		else {
-			rightPanel.AddRectangle();
+			rightPanel.addRectangle();
 		}
 	}
 	
