@@ -55,7 +55,7 @@ public class RightPanelMouse implements MouseListener, MouseMotionListener {
 		currentX = e.getX();
 		currentY = e.getY();
 		if(e.getButton() == MouseEvent.BUTTON3) {
-			rightPanel.DeleteShape(e.getComponent().hashCode());
+			rightPanel.deleteShape(e.getComponent().hashCode());
 		}
 	}
 			

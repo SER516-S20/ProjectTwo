@@ -2,6 +2,9 @@ import java.util.Hashtable;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+/**
+ * @author Yijian Hu
+ */
 public class RightPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Hashtable<Integer, JButton> shapes;
@@ -11,7 +14,7 @@ public class RightPanel extends JPanel {
 		shapes = new Hashtable<Integer, JButton>();
 	}
 	
-	public void AddRound() {
+	public void addRound() {
 		RoundButton round = new RoundButton("");
 		round.addMouseListener(new RightPanelMouse(this) {});
 		round.addMouseMotionListener(new RightPanelMouse(this) {});
@@ -20,7 +23,7 @@ public class RightPanel extends JPanel {
 		frame.contentRepaint();
 	}
 	
-	public void AddTriangle() {
+	public void addTriangle() {
 		TriangleButton triangle = new TriangleButton("");
 		triangle.addMouseListener(new RightPanelMouse(this) {});
 		triangle.addMouseMotionListener(new RightPanelMouse(this) {});
@@ -29,7 +32,7 @@ public class RightPanel extends JPanel {
 		frame.contentRepaint();
 	}
 	
-	public void AddRectangle() {
+	public void addRectangle() {
 		RectangleButton rectangle = new RectangleButton("");
 		rectangle.addMouseListener(new RightPanelMouse(this) {});
 		rectangle.addMouseMotionListener(new RightPanelMouse(this) {});
@@ -38,17 +41,17 @@ public class RightPanel extends JPanel {
 		frame.contentRepaint();
 	}
 	
-	public void DeleteShape(int hashCode) {
+	public void deleteShape(int hashCode) {
 		this.remove(shapes.get(hashCode));
 		shapes.remove(hashCode);
 		frame.contentRepaint();
 	}
 	
-	public void SetFrame(Frame frame) {
+	public void setFrame(Frame frame) {
 		this.frame = frame;
 	}
 	
-	public void SetShapeLocation(int hashCode, int x, int y) {
+	public void setShapeLocation(int hashCode, int x, int y) {
 		shapes.get(hashCode).setLocation(x,y);
 		frame.contentRepaint();
 	}
