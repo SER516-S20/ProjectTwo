@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-/*
+/**
  * @author Karandeep Singh Grewal
  * @author Aditya Bajaj
  * @author Praveen
@@ -24,7 +24,7 @@ public class RightPanel implements Panel {
 
     }
 
-    //makes the shape draggable
+    /*makes the shape draggable*/
     public void drag(JPanel shape) {
         final int[] dragX = new int[1];
         final int[] dragY = new int[1];
@@ -55,7 +55,7 @@ public class RightPanel implements Panel {
         });
     }
 
-    //creates the shape when we click on the mouse location
+    /*creates the shape when we click on the mouse location*/
     public void makeShapes(JPanel panel) {
         panel.addMouseListener(new MouseListener() {
             @Override
@@ -67,7 +67,8 @@ public class RightPanel implements Panel {
                     shape = new Circle();
                 int mouseLocationX = mouseEvent.getX();
                 int mouseLocationY = mouseEvent.getY();
-                shape.setBounds(mouseLocationX - 50, mouseLocationY - 50, mouseLocationX + 50, mouseLocationY + 50);
+                shape.setBounds(mouseLocationX - 50, mouseLocationY - 50,
+                            mouseLocationX + 50, mouseLocationY + 50);
                 panel.add(shape);
                 panel.revalidate();
                 panel.repaint();
