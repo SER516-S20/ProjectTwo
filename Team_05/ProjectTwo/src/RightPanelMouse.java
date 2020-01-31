@@ -1,8 +1,10 @@
-//@author ShihYu Chang
-//rightPanelMouse listener Function
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+
+/**
+ * @author ShihYu Chang
+ */
 public class RightPanelMouse implements MouseListener, MouseMotionListener {
 	private int currentX;
 	private int currentY;

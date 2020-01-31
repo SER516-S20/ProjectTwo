@@ -1,8 +1,9 @@
-//@author:ShihYuChang 
-//Leftmouse funtion
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * @author ShihYuChang
+ */
 public class LeftPanelMouse extends MouseAdapter{
 	private RightPanel rightPanel;
 	
