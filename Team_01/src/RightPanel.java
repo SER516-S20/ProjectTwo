@@ -9,17 +9,21 @@ import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 
 /**
+ * This class creates selected shape on the right panel with the help of x and y
+ * coordinates
+ * 
  * @author Raghavan
- *
+ * @version 1.0
  */
-public class RightPanel extends JPanel {
-	
-	int x, y;
 
+public class RightPanel extends JPanel {
+
+	int x, y;
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
-	 * Uses graphics to draw components
+	 * Uses graphics to draw different shape components
+	 * 
 	 * @param graphics
 	 */
 	public void paintComponent(Graphics graphics) {
@@ -42,28 +46,27 @@ public class RightPanel extends JPanel {
 			Circle circle = new Circle();
 			circle.drawShape(graphics, x, y);
 		}
-		
+
 		this.setBackground(Color.WHITE);
-		
+
 		this.addMouseListener(new MouseAdapter() {
 			/**
 			 * Overridden method to add mouse click event handler.
-			 * Will call paintComponent(Graphics) method using repaint().
-			 * 
+			 * Track x and y coordinate when mouse dragged
 			 */
 			@Override
 			public void mousePressed(MouseEvent e) {
 				x = e.getX();
 				y = e.getY();
-				for (int i = Frame.getShapes().size() - 1; i >=0; i--) {
+				for (int i = Frame.getShapes().size() - 1; i >= 0; i--) {
 					Shape shape = Frame.getShapes().get(i);
 					if (shape.contains(e.getPoint())) {
-						LeftPanelMouseListener.markIsClickedTrue(
-								Frame.getShapesMap().get(Frame.getShapes().get(i)));
+						LeftPanelMouseListener.markIsClickedTrue(Frame.getShapesMap().get(Frame.getShapes().get(i)));
 						Frame.getShapes().remove(i);
 					}
 				}
 			}
+
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				x = e.getX();
@@ -72,5 +75,5 @@ public class RightPanel extends JPanel {
 			}
 		});
 	}
-	
+
 }

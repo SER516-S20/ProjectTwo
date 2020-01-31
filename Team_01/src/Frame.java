@@ -42,7 +42,6 @@ public class Frame extends JFrame {
 			this.add(leftPanel);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -58,7 +57,6 @@ public class Frame extends JFrame {
 			this.add(rightPanel);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -75,6 +73,7 @@ public class Frame extends JFrame {
 			getShapes().add(shape);
 			getShapesMap().put(shape, shapesEnum);
 		}
+		System.out.println(getShapes());
 	}
 
 	public static List<Shape> getShapes() {
