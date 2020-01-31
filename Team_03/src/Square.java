@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * To create square shape at a particular position for the given X and Y coordinate
+ * Square.java - a class for creating square shape at a particular position
  * @author Nachiappan Lakshmanan
  * @version 1.0
  * @since 01/29/2020
