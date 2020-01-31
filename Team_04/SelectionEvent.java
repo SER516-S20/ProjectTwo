@@ -1,28 +1,29 @@
-/**
-@author Pradeep Relangi 
-**/
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-
+/**
+@author Pradeep Relangi
+@since 1-27-2020
+@version 1.0 
+**/
 public class SelectionEvent implements ActionListener
 {
-	JButton button;
+	private JButton shapeButton;
 	private String shape;
-	private SelectedShape Select;
+	private SelectedShape select;
 	
 	public SelectionEvent(JButton button, String shape)
 	{
-		this.button = button;
-		this.button.addActionListener(this);
+		this.shapeButton = button;
+		this.shapeButton.addActionListener(this);
 		this.shape = shape;
-		Select = new SelectedShape();
+		select = new SelectedShape();
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
-		Select.name = shape;
+		select.name = shape;
 	}
 	
 }
