@@ -23,7 +23,6 @@ public class LeftPanel extends JPanel
 	public void SetMouseAdapter_RoundButton(MouseAdapter adapter) 
 	{
 		roundButton.addMouseListener(adapter);
-	
 	}
 	
 	public void SetMouseAdapter_TriangleButton(MouseAdapter adapter) 

@@ -1,5 +1,4 @@
 import java.util.Hashtable;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -8,11 +7,13 @@ public class RightPanel extends JPanel{
 	private Hashtable<Integer, JButton> shapes;
 	private Frame frame;
 	
-	public RightPanel() {
+	public RightPanel()
+	{
 		shapes = new Hashtable<Integer, JButton>();
-		
 	}
-	public void AddRound() {
+	
+	public void AddRound()
+	{
 		RoundButton round = new RoundButton("");
 		round.addMouseListener(new RightPanelMouse(this) {});
 		round.addMouseMotionListener(new RightPanelMouse(this) {});
