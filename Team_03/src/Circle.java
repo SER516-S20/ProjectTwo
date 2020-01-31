@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * To create circle shape at a particular position for the given X and Y coordinate
+ * Circle.java - a class for creating circle shape at a particular position
  * @author Nachiappan Lakshmanan
  * @version 1.0
  * @since 01/27/2020
