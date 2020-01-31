@@ -13,18 +13,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
 import javafx.scene.input.MouseEvent;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-
 public class SourcePanel extends Application {
+
     private int shapeCount = 0;
     private Canvas canvas;
     private Color currentColor = Color.BLACK;
     private Shape[] shapes = new Shape[1000];
     public Shape currentShape;
     private boolean dragging = false;
+    private Shape shapeBeingDragged = null;
+    private int prevDragX;
+    private int prevDragY;
 
     public static void main(String[] args) {
         launch(args);
@@ -32,14 +34,11 @@ public class SourcePanel extends Application {
 
     public void start(Stage stage) {
         canvas = makeCanvas();
-
-        canvas = makeCanvas();
         paintCanvas();
         StackPane canvasHolder = new StackPane(canvas);
         canvasHolder.setStyle("-fx-border-width: 2px; -fx-border-color: #444");
         BorderPane root = new BorderPane(canvasHolder);
         root.setStyle("-fx-border-width: 1px; -fx-border-color: black");
-
         root.setLeft(makeToolPanel(canvas));
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -49,7 +48,6 @@ public class SourcePanel extends Application {
     }
 
     private Canvas makeCanvas() {
-
         Canvas canvas = new Canvas(800, 600);
         canvas.setOnMousePressed(this::mousePressed);
         canvas.setOnMouseReleased(this::mouseReleased);
@@ -59,15 +57,12 @@ public class SourcePanel extends Application {
     }
 
     private VBox makeToolPanel(Canvas canvas) {
-
         FileInputStream circleImage = null, rectangleImage = null,
-                squareImage = null, ellipseImage = null, triangleImage = null;
+                squareImage = null, triangleImage = null;
         try {
             circleImage = new FileInputStream("Team_08/src/Image/circle.png");
             rectangleImage = new FileInputStream("Team_08/src/Image/rectangle.png");
             squareImage = new FileInputStream("Team_08/src/Image/square.png");
-            ellipseImage = new FileInputStream("Team_08/src/Image/ellipse.png");
-            //To be implemented
             triangleImage = new FileInputStream("Team_08/src/Image/triangle.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -100,13 +95,11 @@ public class SourcePanel extends Application {
                 "Magenta", "Yellow", "Black", "White"};
         combobox.getItems().addAll(colorNames);
         combobox.setValue("Red");
-        combobox.setOnAction(
-                e -> currentColor = colors[combobox.getSelectionModel().getSelectedIndex()]);
+        combobox.setOnAction(e -> currentColor = colors[combobox.getSelectionModel().getSelectedIndex()]);
         VBox tools = new VBox(20);
         tools.getChildren().add(ovalButton);
         tools.getChildren().add(rectButton);
         tools.getChildren().add(squareButton);
-        //tools.getChildren().add(ellipseButton);
         tools.getChildren().add(triangleButton);
         tools.getChildren().add(combobox);
         tools.setStyle("-fx-border-width: 3px; -fx-border-color: transparent; -fx-background-color: white");
@@ -131,12 +124,7 @@ public class SourcePanel extends Application {
         paintCanvas();
     }
 
-    private Shape shapeBeingDragged = null;
-    private int prevDragX;
-    private int prevDragY;
-
     private void mousePressed(MouseEvent evt) {
-
         int x = (int) evt.getX();
         int y = (int) evt.getY();
         for (int i = shapeCount - 1; i >= 0; i--) {
@@ -164,7 +152,6 @@ public class SourcePanel extends Application {
         int y = (int) evt.getY();
         if (shapeBeingDragged != null) {
             dragging = true;
-
             shapeBeingDragged.moveBy(x - prevDragX, y - prevDragY);
             prevDragX = x;
             prevDragY = y;
