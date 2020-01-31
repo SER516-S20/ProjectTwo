@@ -7,11 +7,9 @@ import java.awt.RenderingHints;
 import java.awt.Shape;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-
 /**
  * this class implement the customer triangle button
  * @author hzhan193
- *
  */ 
 public class TriangleButton extends JButton{
 
@@ -20,6 +18,7 @@ public class TriangleButton extends JButton{
 	private Color foreground = new Color(178, 255, 102);
 	private Color background = new Color(0, 255, 255);
 	private Dimension size;
+	
 	public TriangleButton(String label) {
 		super(label);
 		size = getPreferredSize();
@@ -55,12 +54,12 @@ public class TriangleButton extends JButton{
 	public boolean contains(int x, int y) {
 		return triangle.contains(x, y);
 	}
+	
 	private Shape createTriangle() {
         Polygon p = new Polygon();
         p.addPoint((size.width - 1) / 2, 0);
         p.addPoint(0, size.height - 1);
         p.addPoint(size.width - 1, size.height - 1);
-        
         return p;
 	}
 }

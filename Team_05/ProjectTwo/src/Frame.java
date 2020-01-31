@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-/***
+/**
  * this class is to show the app
  * @author Hongqi Zhang
  */
@@ -21,15 +21,11 @@ public class Frame extends JFrame{
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
-		
-
-		//add panels to the frame
 		btnContainer = new LeftPanel();
 		dragArea = new RightPanel();
 		dragArea.SetFrame(this);
 		this.getContentPane().add(createLeftPanel());
 		this.getContentPane().add(createRightPanel());
-		
 		this.pack();
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
@@ -43,7 +39,6 @@ public class Frame extends JFrame{
 		btnContainer.SetMouseAdapter_RoundButton(new LeftPanelMouse(dragArea));
 		btnContainer.SetMouseAdapter_TriangleButton(new LeftPanelMouse(dragArea));
 		btnContainer.SetMouseAdapter_RectangleButton(new LeftPanelMouse(dragArea));
-		
 		return btnContainer;
 	}
 	
@@ -51,7 +46,6 @@ public class Frame extends JFrame{
 		dragArea.setLocation(200, 0);
 		dragArea.setSize(600, 500);
 		dragArea.setBackground(rBackground);
-		
 		return dragArea;
 	}
 	

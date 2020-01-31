@@ -13,15 +13,14 @@ import javax.swing.JButton;
  * This class can draw and create rectangle button.
  * @author KaiRui Hsu
  * @since 01/26/2020 version 1.0
- **/
-
-public class RectangleButton extends JButton{
-	
+ */
+public class RectangleButton extends JButton {
 	private static final long serialVersionUID = 1L;
 	private Shape rectangle;
 	private Color foreground = new Color(178, 255, 102);
 	private Color background = new Color(0, 255, 255);
 	private Dimension size;
+	
 	public RectangleButton(String label) {
 		super(label);
 		size = getPreferredSize();
@@ -42,8 +41,7 @@ public class RectangleButton extends JButton{
 			g.setColor(foreground);
 		}
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.fillRect(0, 0, getSize().width - 1,getSize().height - 1);
-		
+		g2d.fillRect(0, 0, getSize().width - 1, getSize().height - 1);	
 		super.paintComponent(g);
 	}
 
@@ -51,12 +49,11 @@ public class RectangleButton extends JButton{
 		g.setColor(this.getForeground());
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		g2d.drawRect(0, 0, getSize().width - 1,getSize().height - 1);
+		g2d.drawRect(0, 0, getSize().width - 1, getSize().height - 1);
 	}
 
 	public boolean contains(int x, int y) {
-		if (rectangle == null || 
-				!rectangle.getBounds().equals(getBounds())) {
+		if (rectangle == null || !rectangle.getBounds().equals(getBounds())) {
 			rectangle = new Ellipse2D.Float(0, 0, getWidth(), getHeight());
 		}
 		return rectangle.contains(x, y);
