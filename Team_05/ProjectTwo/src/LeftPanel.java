@@ -2,6 +2,9 @@ import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import javax.swing.JPanel;
 
+/**
+ * @author Yijian Hu
+ */
 public class LeftPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private RoundButton roundButton = new RoundButton("Round");
@@ -18,16 +21,16 @@ public class LeftPanel extends JPanel {
 		this.add(rectangleButton);
 	}
 	
-	public void SetMouseAdapter_RoundButton(MouseAdapter adapter) {
+	public void setRoundButtonMouseAdapter(MouseAdapter adapter) {
 		roundButton.addMouseListener(adapter);
 	}
 	
-	public void SetMouseAdapter_TriangleButton(MouseAdapter adapter) {
+	public void setTriangleButtonMouseAdapter(MouseAdapter adapter) {
 		triangleButton.addMouseListener(adapter);
 	}
 	
 	
-	public void SetMouseAdapter_RectangleButton(MouseAdapter adapter) {
+	public void setRectangleButtonMouseAdapter(MouseAdapter adapter) {
 		rectangleButton.addMouseListener(adapter);
 	}
 }
