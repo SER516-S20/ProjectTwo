@@ -1,8 +1,10 @@
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 /**
  * Adding mouse listeners for providing mouse click functionality
  * to add the shape to the right panel.
+ * 
  * @author Parikshith Kedilaya Mallar
  * @version 1.0
  */
@@ -56,9 +58,9 @@ public class LeftPanelMouseListener extends MouseAdapter {
 	}
 
     /**
-	 * @param shape
 	 * Instantiates or uses the created instance of different shapes' class
 	 * and sets isClicked value as true for the shape which was clicked.
+	 * @param shape
 	 */
 	public static void markIsClickedTrue(ShapesEnum shape) {
 		try {
@@ -83,8 +85,7 @@ public class LeftPanelMouseListener extends MouseAdapter {
 	}
 	
 	/**
-	 * @return
-	 * returns which shape was clicked.
+	 * returns the shape that is clicked.
 	 */
 	public static ShapesEnum getSelectedShape() {
 		if (isSquareClicked()) {

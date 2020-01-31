@@ -2,6 +2,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Rectangle2D;
+
 /**
  *@author Raghavan
  *@version 1.0
@@ -22,4 +23,5 @@ public class Square implements Shapes {
 		
 		Frame.addShape(square, ShapesEnum.SQUARE);
 	}
+	
 }

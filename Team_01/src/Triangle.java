@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Path2D;
+
 /**
  * @author Rishika Bera
  * @version 1.0
@@ -26,4 +27,5 @@ public class Triangle implements Shapes {
 		
 		Frame.addShape(path, ShapesEnum.TRIANGLE);
 	}
+	
 }
