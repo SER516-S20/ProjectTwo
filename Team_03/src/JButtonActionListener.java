@@ -1,10 +1,4 @@
 
-/**
- * @author Ashwin Srinivasan
- * @since 01/28/2020
- * @version 1.0
- */
-
 import java.awt.*;
 
 /**
