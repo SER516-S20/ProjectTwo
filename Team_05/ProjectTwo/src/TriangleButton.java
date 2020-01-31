@@ -9,7 +9,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 /**
  * this class implement the customer triangle button
- * @author hzhan193
+ * @author Hongqi Zhang
  */ 
 public class TriangleButton extends JButton{
 
