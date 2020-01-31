@@ -1,26 +1,22 @@
-
-/**
- * @author sarvansh prasher
- * @created on 01-27-2020
- * @author Suryadeep
- * @modified on 01-28-2020
- */
-
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+/**
+ * @author sarvansh prasher
+ * @created on 01-27-2020
+ * @version 1.0
+ * @author Suryadeep
+ * @modified on 01-28-2020
+ * @version 2.0
+ */
 public class PanelSquare extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Create the panel.
-	 */
 	public PanelSquare() {
 		addMouseListener(new MouseAdapter() {
 			@Override
@@ -31,7 +27,6 @@ public class PanelSquare extends JPanel {
 		});
 		JPanel objSquarePane = new JPanel();
 		repaint();
-
 		objSquarePane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		objSquarePane.setLayout(null);
 	}

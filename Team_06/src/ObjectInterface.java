@@ -1,10 +1,13 @@
 import java.awt.Dimension;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
+import javax.swing.*;
 import javax.swing.border.Border;
 
-public abstract class ObjectInterface extends JButton{
+/** 
+ * @author Sheran
+ * @since 01-29-2019
+ */
+public abstract class ObjectInterface extends JButton {
+	
 	public ObjectInterface(String label) {
         super(label);
         Dimension size = getPreferredSize();
@@ -13,6 +16,7 @@ public abstract class ObjectInterface extends JButton{
         
         Border emptyBorder = BorderFactory.createEmptyBorder();
         setBorder(emptyBorder);
+        
         setContentAreaFilled(false);
     }
 }

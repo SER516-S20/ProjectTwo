@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.swing.JFrame;
 
 /**
  * @author Chandan Kiragadalu Javaregowda
- *
+ * @version 1.0
  */
 public class Frame extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -42,7 +41,6 @@ public class Frame extends JFrame {
 			this.add(leftPanel);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -58,7 +56,6 @@ public class Frame extends JFrame {
 			this.add(rightPanel);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -75,6 +72,7 @@ public class Frame extends JFrame {
 			getShapes().add(shape);
 			getShapesMap().put(shape, shapesEnum);
 		}
+		System.out.println(getShapes());
 	}
 
 	public static List<Shape> getShapes() {

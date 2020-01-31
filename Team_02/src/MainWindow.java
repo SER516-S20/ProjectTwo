@@ -1,11 +1,9 @@
-
+import javax.swing.*;
 /**
  * @author Kunal Sharma
- * Created on 01-27-2020
+ * @created on 01-27-2020
+ * @version 1.0
  */
-
-import javax.swing.*;
-
 public class MainWindow {
 	public static void main(String[] args) {
 		try {
@@ -13,13 +11,11 @@ public class MainWindow {
 			frame.setVisible(true);
 			frame.setSize(1000, 1000);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 			JSplitPane splitPane = new JSplitPane();
 			splitPane.setSize(900, 900);
 			splitPane.setDividerSize(0);
 			splitPane.setDividerLocation(200);
 			splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
-
 			splitPane.setTopComponent(new PanelToolkit());
 			splitPane.setBottomComponent(new DrawBoardPanel());
 			frame.add(splitPane);
@@ -28,5 +24,4 @@ public class MainWindow {
 			System.out.println(ex.getMessage());
 		}
 	}
-
 }

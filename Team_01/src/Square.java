@@ -2,15 +2,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Rectangle2D;
-
 /**
- * @author Raghavan
- *
+ *@author Raghavan
+ *@version 1.0
  */
 public class Square implements Shapes {
 
 	/**
-	 * 
 	 * Draws a square using Rectangle2D
 	 * @param graphic
 	 * @param x - x coordinate for the shape
@@ -24,5 +22,4 @@ public class Square implements Shapes {
 		
 		Frame.addShape(square, ShapesEnum.SQUARE);
 	}
-
 }
