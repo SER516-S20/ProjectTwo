@@ -1,9 +1,3 @@
-
-/**
- * @author Suryadeep
- * @created on 01-27-2020
- */
-
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -12,6 +6,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+/**
+ * @author Suryadeep
+ * @created on 01-27-2020
+ * @version 1.0
+ */
 public class PanelRectangle extends JPanel {
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +24,6 @@ public class PanelRectangle extends JPanel {
 		});
 		JPanel objRectanglePane = new JPanel();
 		repaint();
-
 		objRectanglePane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		objRectanglePane.setLayout(null);
 	}
