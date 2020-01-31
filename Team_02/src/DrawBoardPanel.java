@@ -1,13 +1,12 @@
-
-/**
- * @author Abhinaw Sarang 
- * Created on 01-29-2020
- */
-
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
+/**
+ * @author Abhinaw Sarang 
+ * @created 01-29-2020
+ * @version 1.0
+ */
 public class DrawBoardPanel extends JPanel {
 
 	public DrawBoardPanel() {
