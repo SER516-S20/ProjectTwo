@@ -11,7 +11,6 @@ public class MainWindow {
 			frame.setVisible(true);
 			frame.setSize(1000, 1000);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			
 			JSplitPane splitPane = new JSplitPane();
 			splitPane.setSize(900, 900);
 			splitPane.setDividerSize(0);
