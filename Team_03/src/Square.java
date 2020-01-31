@@ -2,43 +2,37 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
+ * To create square shape at a particular position for the given X and Y coordinate
  * @author Nachiappan Lakshmanan
  * @version 1.0
- */
-
-/*
- * This class is used to create square shape at a particular position for the
- * given X and Y coordinate
+ * @since 01/29/2020
  */
 public class Square implements Shape {
 
 	static final int SQUARE_HEIGHT = 50;
 	static final int SQUARE_WIDTH = 50;
+	private int coordinateX;
+	private int coordinateY;
 
-	private int cordinateX;
-	private int cordinateY;
-
-	public int getCordinateX() {
-		return cordinateX;
+	public int getCoordinateX() {
+		return coordinateX;
 	}
 
-	public int getCordinateY() {
-		return cordinateY;
+	public int getCoordinateY() {
+		return coordinateY;
 	}
 
 	@Override
 	public void setPosition(int x, int y) {
-		this.cordinateX = x;
-		this.cordinateY = y;
+		this.coordinateX = x;
+		this.coordinateY = y;
 	}
 
 	@Override
 	public void draw(Graphics g) {
-
 		g.setColor(Color.BLUE);
-		g.drawRect(cordinateX, cordinateY, SQUARE_HEIGHT, SQUARE_WIDTH);
-		g.fillRect(cordinateX, cordinateY, SQUARE_HEIGHT, SQUARE_WIDTH);
-
+		g.drawRect(coordinateX, coordinateY, SQUARE_WIDTH, SQUARE_HEIGHT);
+		g.fillRect(coordinateX, coordinateY, SQUARE_WIDTH, SQUARE_HEIGHT);
 	}
 
 }

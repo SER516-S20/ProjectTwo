@@ -1,10 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-/*
- *@author Ashutosh Dey
+/**
+ * @author Ashutosh Dey
+ * @version 1.0
+ * @since 01/29/2020
  */
 public class TriangleIcon implements Icon {
-    public final int POSITION_DEVIATION = 0;
 
     public int getIconWidth() {
         return 0;
@@ -15,10 +16,10 @@ public class TriangleIcon implements Icon {
     }
 
     public void paintIcon(Component c, Graphics g, int x, int y) {
+        int positionDeviation = 0;
         Triangle triangle = new Triangle();
-        triangle.setPosition(x - POSITION_DEVIATION, y - POSITION_DEVIATION);
+        triangle.setPosition(x - positionDeviation, y - positionDeviation);
         triangle.draw(g);
-
     }
 
 }

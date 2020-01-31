@@ -1,11 +1,14 @@
 import java.awt.*;
 import javax.swing.*;
-
+/** 
+ * @author Nikitha
+ * @Since 1-26-2020
+ * @version 1.0
+ */ 
 public class Frame extends JFrame
 {
 	private static final String FRAME_TITLE = "Team4";
 	
-
 	public Frame()
 	{
 	    this.setTitle(FRAME_TITLE);

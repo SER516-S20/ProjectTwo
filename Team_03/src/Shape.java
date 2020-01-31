@@ -1,11 +1,10 @@
 import java.awt.Graphics;
 
 /**
+ * interface shape which is implemented by circle, triangle and square
  * @author Nachiappan Lakshmanan
  * @version 1.0
- */
-/*
- * interface shape which is implemented by circle, triangle and square
+ * @since 01/29/2020
  */
 public interface Shape {
 

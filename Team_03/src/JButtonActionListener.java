@@ -3,112 +3,93 @@
  * @since 01/28/2020
  * @version 1.0
  */
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
+import java.awt.*;
 
 /**
  * This class is used to identify which shape has been selected by the user
+ * @author ashwin srinivasan
+ * @version 1.0
+ * @since 01/29/2020
  */
-
 public class JButtonActionListener {
 
     static boolean isCirclePanelClicked = false, isTrianglePanelClicked = false, isSquarePanelClicked = false;
 
-    public void addActionListener() {
-
+    public static void addActionListener() {
         addCircleButtonActionListener();
-        addSquareButtonActionlistener();
-        addTriangleButtonActionlistener();
-
+        addSquareButtonActionListener();
+        addTriangleButtonActionListener();
     }
 
-    public void activateCirclePanel() {
+    private static  void activateCirclePanel() {
         isCirclePanelClicked = true;
         ShapePanel.circleButton.setBackground(Color.YELLOW);
         ShapePanel.circleButton.setOpaque(true);
-
     }
 
-    public void deActivateCirclePanel() {
+    private static  void deActivateCirclePanel() {
         isCirclePanelClicked = false;
         ShapePanel.circleButton.setBackground(Color.GRAY);
         ShapePanel.circleButton.setOpaque(true);
     }
 
-    public void activateSquarePanel() {
+    private static  void activateSquarePanel() {
         isSquarePanelClicked = true;
         ShapePanel.squareButton.setBackground(Color.YELLOW);
         ShapePanel.squareButton.setOpaque(true);
-
     }
 
-    public void deActivateSquarePanel() {
+    private static  void deActivateSquarePanel() {
         isSquarePanelClicked = false;
         ShapePanel.squareButton.setBackground(Color.GRAY);
         ShapePanel.squareButton.setOpaque(true);
     }
 
-    public void activateTrianglePanel() {
+    private static  void activateTrianglePanel() {
         isTrianglePanelClicked = true;
         ShapePanel.triangleButton.setBackground(Color.YELLOW);
         ShapePanel.triangleButton.setOpaque(true);
-
     }
 
-    public void deActivateTrianglePanel() {
+    private static  void deActivateTrianglePanel() {
         isTrianglePanelClicked = false;
         ShapePanel.triangleButton.setBackground(Color.GRAY);
         ShapePanel.triangleButton.setOpaque(true);
     }
 
-    public void addCircleButtonActionListener() {
-        ShapePanel.circleButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (!isCirclePanelClicked) {
-                    activateCirclePanel();
-                    deActivateSquarePanel();
-                    deActivateTrianglePanel();
-
-                } else {
-                    deActivateCirclePanel();
-                }
+    private static  void addCircleButtonActionListener() {
+        ShapePanel.circleButton.addActionListener(e -> {
+            if (!isCirclePanelClicked) {
+                activateCirclePanel();
+                deActivateSquarePanel();
+                deActivateTrianglePanel();
+            } else {
+                deActivateCirclePanel();
             }
         });
     }
 
-    public void addSquareButtonActionlistener() {
-        ShapePanel.squareButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (!isSquarePanelClicked) {
-                    activateSquarePanel();
-                    deActivateCirclePanel();
-                    deActivateTrianglePanel();
-
-                } else {
-                    deActivateSquarePanel();
-                }
+    private static  void addSquareButtonActionListener() {
+        ShapePanel.squareButton.addActionListener(e -> {
+            if (!isSquarePanelClicked) {
+                activateSquarePanel();
+                deActivateCirclePanel();
+                deActivateTrianglePanel();
+            } else {
+                deActivateSquarePanel();
             }
         });
     }
 
-    public void addTriangleButtonActionlistener() {
-        ShapePanel.triangleButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (!isTrianglePanelClicked) {
-                    activateTrianglePanel();
-                    deActivateSquarePanel();
-                    deActivateCirclePanel();
-
-                } else {
-                    deActivateTrianglePanel();
-                }
+    private static  void addTriangleButtonActionListener() {
+        ShapePanel.triangleButton.addActionListener(e -> {
+            if (!isTrianglePanelClicked) {
+                activateTrianglePanel();
+                deActivateSquarePanel();
+                deActivateCirclePanel();
+            } else {
+                deActivateTrianglePanel();
             }
         });
     }
