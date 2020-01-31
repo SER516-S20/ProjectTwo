@@ -7,8 +7,8 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 /**
- * author: Suyog, Dhananjay
- * Date: 01/28/2020
+ * @author: Suyog, Dhananjay
+ * @Date: 01/28/2020
  */
 public class RightPanel extends PanelInterface{
 	int finalFlag = 0;
