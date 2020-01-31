@@ -1,10 +1,12 @@
-/** @author : Snehith karna
- */ 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+/** 
+ * @author Snehith karna
+ * @created on 1-28-2020
+ * @version 1.0
+ */ 
 public class DrawingCanvas extends JPanel implements MouseListener
 {
 	SelectedShape shape;
@@ -27,5 +29,4 @@ public class DrawingCanvas extends JPanel implements MouseListener
 	public void mouseExited(MouseEvent arg0) {}
 	public void mousePressed(MouseEvent arg0) {}
 	public void mouseReleased(MouseEvent arg0) {}
-
 }
