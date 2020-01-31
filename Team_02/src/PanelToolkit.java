@@ -3,15 +3,18 @@ import java.awt.GridLayout;
 import java.lang.reflect.InvocationTargetException;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
+
 /**
  * @author Suryadeep
  * @created on 01-28-2020
  * @version 1.0
  */
 public class PanelToolkit extends JPanel {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public PanelToolkit() {
+
 		String[] classNames = new String[] { "Circle", "Rectangle", "Square", "Triangle" };
 		for (int i = 0; i < classNames.length; i++) {
 			try {

@@ -6,8 +6,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 /**
- * @author sarvansh prasher
+ * @author Sarvansh Prasher
  * @created on 01-27-2020
  * @version 1.0
  * @author Suryadeep
@@ -15,16 +16,12 @@ import javax.swing.border.EmptyBorder;
  * @version 2.0
  */
 public class PanelSquare extends JPanel {
+
 	private static final long serialVersionUID = 1L;
 
 	public PanelSquare() {
-		addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				ClickedShape objClickedShape = new ClickedShape();
-				objClickedShape.returnShape("Square");
-			}
-		});
+
+		addMouseListener(new PanelMouseListener());
 		JPanel objSquarePane = new JPanel();
 		repaint();
 		objSquarePane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -32,12 +29,23 @@ public class PanelSquare extends JPanel {
 	}
 
 	public void paintComponent(Graphics objGraphics) {
+
 		try {
 			Graphics2D obj2D = (Graphics2D) objGraphics;
 			Shape objSquare = new Rectangle(105, 60, 80, 80);
 			obj2D.draw(objSquare);
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
+		}
+	}
+
+	private class PanelMouseListener extends MouseAdapter {
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+
+			ClickedShape objClickedShape = new ClickedShape();
+			objClickedShape.returnShape("Square");
 		}
 	}
 }

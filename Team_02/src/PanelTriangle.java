@@ -5,22 +5,19 @@ import java.awt.event.MouseEvent;
 import java.awt.geom.Path2D;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 /**
  * @author Suryadeep
  * @created on 01-28-2020
  * @version 1.0
  */
 public class PanelTriangle extends JPanel {
+
 	private static final long serialVersionUID = 1L;
 
 	public PanelTriangle() {
-		addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				ClickedShape objClickedShape = new ClickedShape();
-				objClickedShape.returnShape("Triangle");
-			}
-		});
+
+		addMouseListener(new PanelMouseListener());
 		JPanel objTrianglePane = new JPanel();
 		repaint();
 		objTrianglePane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -28,6 +25,7 @@ public class PanelTriangle extends JPanel {
 	}
 
 	public void paintComponent(Graphics objGraphics) {
+
 		try {
 			Path2D path = new Path2D.Double();
 			path.moveTo(120, 60);
@@ -38,6 +36,16 @@ public class PanelTriangle extends JPanel {
 			obj2D.draw(path);
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
+		}
+	}
+
+	private class PanelMouseListener extends MouseAdapter {
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+
+			ClickedShape objClickedShape = new ClickedShape();
+			objClickedShape.returnShape("Triangle");
 		}
 	}
 }
