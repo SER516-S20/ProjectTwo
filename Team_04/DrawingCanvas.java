@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 /** 
  * @author Snehith karna
- * @created on 1-28-2020
+ * @since 1-28-2020
  * @version 1.0
  */ 
 public class DrawingCanvas extends JPanel implements MouseListener
