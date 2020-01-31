@@ -1,47 +1,49 @@
-import java.awt.*;
 import javax.swing.*;
-import java.lang.reflect.InvocationTargetException;
+import java.awt.*;
 
+/**
+ * author: Somesh, Suyog
+ * Date: 01/28/2020
+ * Description: This is the main class and it handles the main frame which is going to contain all the items in the application.
+ */
 public class FrameClass extends JFrame{
 
-	private static final String[] PANEL_NAMES = {"LeftPanel", "RightPanel"};
-	
-	public JPanel[] panels = new JPanel[15];
-	 
+	private static final String[] panelNames = {"LeftPanel", "RightPanel"};
+	private JPanel[] panels = new JPanel[15];
+	// This is the constructor for the FrameClass class
 	FrameClass(String name) {
+
 		this.setTitle(name);
 	    this.setMinimumSize(new Dimension(800, 600));
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 	    getContentPane().add(addPanels());
-	    
 	    this.pack();
 	    this.setLocationRelativeTo(null);
 	    this.setVisible(true);
+
 	}
-	
-	    public JSplitPane addPanels(){
+	//This method splits the frame into two panels. It is basically adding two panels with a division pre-defined as per user's desire.
+	public JSplitPane addPanels(){
+
 	    Class<?> panelClass1;
 	    Class<?> panelClass2;
-	    
-	    for(int i = 0; i < PANEL_NAMES.length; i++) {
-		   try {
-			   Class<?> panelClass = Class.forName(PANEL_NAMES[i]);
-			   JPanel panel;
-			   if (i == 1) {
-				    panel = (JPanel) RightPanel.getInstance();
+	    for(int thePanel = 0; thePanel < panelNames.length; thePanel++) {
 
-			   }
-			   else{
-				    panel = (JPanel) panelClass.getDeclaredConstructor().newInstance();
-			   }
-			   panels[i] = panel;
-		   }catch(Exception e) {
-			   addError(PANEL_NAMES[i]);
+		   try {
+
+			   Class<?> panelClass = Class.forName(panelNames[thePanel]);
+			   JPanel panel = (JPanel) panelClass.getDeclaredConstructor().newInstance();
+			   panels[thePanel] = panel;
+
+		   }
+		   catch(Exception e) {
+
+			   addError(panelNames[thePanel]);
+
 		   }
 	    }
-		   
-	    try {      
+	    try {
+
 	        JSplitPane splitPane = new JSplitPane();
 	        splitPane.setSize(800, 600);
 	        splitPane.setDividerSize(0);
@@ -50,20 +52,30 @@ public class FrameClass extends JFrame{
 	        splitPane.setLeftComponent(panels[0]);
 	        splitPane.setRightComponent(panels[1]);
 		    return splitPane;
-			} catch (Exception e) {
-				e.printStackTrace();
+
 			}
+	    catch (Exception e) {
+
+	    	e.printStackTrace();
+
+	    }
 	    return null;
-	    }
-	    
-	    private void addError(String panelNumber) {
-	        JPanel panel = new JPanel();
-	        JLabel label = new JLabel("Panel " + panelNumber + " Error");
-	        panel.add(label);
-	        add(panel);
-	    }    
-	    public static void main(String args[]) {
-	    	new FrameClass("Somesh");
-	    }
+
+	}
+	// This method is used to throw error message for a specific case where the two panels are not defined in the PANEL_NAMES list.
+	private void addError(String panelNumber) {
+
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel("Panel " + panelNumber + " Error");
+		panel.add(label);
+		add(panel);
+
+	}
+	// This is the main method for the FrameClass class
+	public static void main(String args[]) {
+
+		new FrameClass("Somesh");
+
+	}
 
 }
