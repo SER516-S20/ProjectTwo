@@ -53,7 +53,7 @@ public class RectangleButton extends JButton {
 	}
 
 	public boolean contains(int x, int y) {
-		if (rectangle == null || !rectangle.getBounds().equals(getBounds())) {
+		if(rectangle == null || !rectangle.getBounds().equals(getBounds())) {
 			rectangle = new Ellipse2D.Float(0, 0, getWidth(), getHeight());
 		}
 		return rectangle.contains(x, y);
