@@ -29,7 +29,6 @@ public class LeftPanel extends JPanel {
 		triangleButton.addMouseListener(adapter);
 	}
 	
-	
 	public void setRectangleButtonMouseAdapter(MouseAdapter adapter) {
 		rectangleButton.addMouseListener(adapter);
 	}
