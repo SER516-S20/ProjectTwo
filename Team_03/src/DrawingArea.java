@@ -1,22 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-/*
- *@author Ashutosh Dey
- */
 
+/**
+ * @author Ashutosh Dey
+ * @version 1.0
+ * @since 01/28/2020
+ */
 public class DrawingArea extends JPanel {
 
-	static ArrayList<Shape> listOfShapes = new ArrayList<Shape>();
-	static final int DRAWING_AREA_HEIGHT = 800;
-	static final int DRAWING_AREA_WIDTH = 600;
+	static ArrayList<Shape> listOfShapes = new ArrayList<>();
+	private static final int DRAWING_AREA_HEIGHT = 600;
+	private static final int DRAWING_AREA_WIDTH = 800;
 
 	DrawingArea() {
 		this.setBackground(Color.WHITE);
-		this.setPreferredSize(new Dimension(DRAWING_AREA_HEIGHT, DRAWING_AREA_WIDTH));
-		MouseListener ml = new MouseListener();
-		addMouseListener(ml);
-		addMouseMotionListener(ml);
+		this.setPreferredSize(new Dimension(DRAWING_AREA_WIDTH, DRAWING_AREA_HEIGHT));
+		MouseListener mouseListener = new MouseListener();
+		addMouseListener(mouseListener);
+		addMouseMotionListener(mouseListener);
 	}
 
 	@Override
@@ -37,22 +39,22 @@ public class DrawingArea extends JPanel {
 		}
 	}
 
-	public void addSquare(Square square) {
+	void addSquare(Square square) {
 		listOfShapes.add(square);
 		repaint();
 	}
 
-	public void addTriangle(Triangle triangle) {
+	void addTriangle(Triangle triangle) {
 		listOfShapes.add(triangle);
 		repaint();
 	}
 
-	public void addCircle(Circle circle) {
+	void addCircle(Circle circle) {
 		listOfShapes.add(circle);
 		repaint();
 	}
 
-	public void repaintOnDrag() {
+	void repaintOnDrag() {
 		repaint();
 	}
 

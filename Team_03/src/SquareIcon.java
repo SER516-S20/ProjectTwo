@@ -1,10 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-/*
- *@author Ashutosh Dey
+/**
+ * @author Ashutosh Dey
+ * @version 1.0
+ * @since 01/29/2020
  */
 public class SquareIcon implements Icon {
-    public final int POSITION_DEVIATION = 25;
 
     public int getIconWidth() {
         return 0;
@@ -15,10 +16,10 @@ public class SquareIcon implements Icon {
     }
 
     public void paintIcon(Component c, Graphics g, int x, int y) {
+        int positionDeviation = 25;
         Square square = new Square();
-        square.setPosition(x - POSITION_DEVIATION, y - POSITION_DEVIATION);
+        square.setPosition(x - positionDeviation, y - positionDeviation);
         square.draw(g);
-
     }
 
 }

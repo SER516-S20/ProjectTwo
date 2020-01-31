@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
-/*
- *@author Ashutosh Dey
+
+/**
+ * @author Ashutosh Dey
+ * @version 1.0
+ * @since 01/27/2020
  */
 public class CircleIcon implements Icon {
-    public final int POSITION_DEVIATION = 25;
 
     public int getIconWidth() {
         return 0;
@@ -15,10 +17,10 @@ public class CircleIcon implements Icon {
     }
 
     public void paintIcon(Component c, Graphics g, int x, int y) {
+        int positionDeviation = 25;
         Circle circle = new Circle();
-        circle.setPosition(x - POSITION_DEVIATION, y - POSITION_DEVIATION);
+        circle.setPosition(x - positionDeviation, y - positionDeviation);
         circle.draw(g);
-
     }
 
 }
