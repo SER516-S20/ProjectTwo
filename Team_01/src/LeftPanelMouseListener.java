@@ -1,10 +1,10 @@
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 /**
- * @author Parikshith Kedilaya Mallar
- * @version 1.0
  * Adding mouse listeners for providing mouse click functionality
  * to add the shape to the right panel.
+ * @author Parikshith Kedilaya Mallar
+ * @version 1.0
  */
 public class LeftPanelMouseListener extends MouseAdapter {
 	

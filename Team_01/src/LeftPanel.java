@@ -1,10 +1,10 @@
 import java.awt.Graphics;
 import javax.swing.JPanel;
 /**
- * @author Raghavan
- * @version 1.0
  * This class is used to create the panel on the left side
  * which has different shapes.
+ * @author Raghavan
+ * @version 1.0
  */
 public class LeftPanel extends JPanel {
 	/*
