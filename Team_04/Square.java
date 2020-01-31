@@ -12,7 +12,7 @@ import javax.swing.JButton;
  */
 public class Square extends JButton
 {
-	SelectionEvent event;
+	private SelectionEvent event;
 	private static Icon label;
 
 	public Square() 

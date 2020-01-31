@@ -9,7 +9,7 @@ import javax.swing.*;
  */
 public class Triangle extends JButton
 {
-	SelectionEvent event;
+	private SelectionEvent event;
 	private static Icon label;
 
 	public Triangle() 
