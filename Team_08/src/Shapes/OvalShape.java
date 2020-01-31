@@ -3,6 +3,11 @@ package Shapes;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+
+/**
+ * @author Sandya
+ * @version 1.0
+ */
 public class OvalShape extends Shape {
     public void draw(GraphicsContext g) {
         g.setFill(color);

@@ -2,6 +2,10 @@ package Shapes;
 
 import javafx.scene.canvas.GraphicsContext;
 
+/**
+ * @author Anusha
+ * @version 1.0
+ */
 public class TriangleShape extends Shape {
 
     public void draw(GraphicsContext g) {

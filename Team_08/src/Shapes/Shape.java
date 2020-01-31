@@ -3,6 +3,10 @@ package Shapes;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+/**
+ * @author Kartik
+ * @version 1.0
+ */
 public abstract class Shape {
     int left, top;
     int width, height;
