@@ -37,23 +37,23 @@ public class LeftPanelMouseListener extends MouseAdapter {
 	}
 	
 	/**
-     * Overridden method to add mouse click event handler.
+	 * Overridden method to add mouse click event handler.
 	 * Used to track which shape has been clicked on the left panel,
 	 * so that only that shape can be created on the right panel.
-     */
-    @Override
-    public void mouseClicked(MouseEvent mouseEvent) {
-        try {
+	 */
+	@Override
+	public void mouseClicked(MouseEvent mouseEvent) {
+		try {
 			for (int i = Frame.getShapes().size() - 1; i >= 0; i--) {
-			    if (Frame.getShapes().get(i).contains(mouseEvent.getPoint())) {
-			        markIsClickedTrue(Frame.getShapesMap().get(Frame.getShapes().get(i)));
-			    	return;
-			    }
+				if (Frame.getShapes().get(i).contains(mouseEvent.getPoint())) {
+					markIsClickedTrue(Frame.getShapesMap().get(Frame.getShapes().get(i)));
+					return;
+				}
 			}
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-    }
+	}
 
     /**
 	 * @param shape
