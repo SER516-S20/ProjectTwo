@@ -16,6 +16,10 @@ import javafx.scene.input.MouseEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+/**
+ * @author Kartik
+ * @version 1.0
+ */
 public class SourcePanel extends Application {
 
     private int shapeCount = 0;

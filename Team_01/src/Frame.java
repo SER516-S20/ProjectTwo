@@ -46,7 +46,8 @@ public class Frame extends JFrame {
 	}
 
 	/**
-	 * Create right panel to the frame paintComponent creates new shapes upon click
+	 * Create right panel to the frame paintComponent 
+	 * creates new shapes upon click
 	 */
 	private void createRightpanel() {
 		try {
@@ -61,8 +62,8 @@ public class Frame extends JFrame {
 	}
 
 	/**
-	 * Method to update shapes and shapesMap lists. Used to track the shapes created
-	 * and kind of shape created.
+	 * Method to update shapes and shapesMap lists. 
+	 * Used to track the shapes created and kind of shape created.
 	 * 
 	 * @param shape
 	 * @param shapesEnum
@@ -97,4 +98,5 @@ public class Frame extends JFrame {
 		frame.createRightpanel();
 
 	}
+	
 }

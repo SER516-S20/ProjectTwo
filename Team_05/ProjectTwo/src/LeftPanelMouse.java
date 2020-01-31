@@ -5,25 +5,23 @@ import java.awt.event.MouseEvent;
 
 public class LeftPanelMouse extends MouseAdapter{
 	private RightPanel rightPanel;
+	
 	public LeftPanelMouse(RightPanel rightPanel) {
 		this.rightPanel = rightPanel;
 	}
+	
 	//Create shape at the rightPanel
 	public void mouseClicked(MouseEvent e) {
 		String button = e.getSource().getClass().getName();
 		if(button == "RoundButton") {
-			rightPanel.AddRound();
+			rightPanel.addRound();
 		}
 		else if(button == "TriangleButton") {
-			rightPanel.AddTriangle();
+			rightPanel.addTriangle();
 		}
 		else {
-			rightPanel.AddRectangle();
+			rightPanel.addRectangle();
 		}
 	}
 	
-	
-	public void setRightPanel() {
-		
-	}
 }

@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
+ * Triangle.java - a class for creating triangle shape at a particular position
  * @author Nachiappan Lakshmanan
  * @version 1.0
  * @since 01/29/2020

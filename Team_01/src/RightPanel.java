@@ -5,7 +5,6 @@ import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JPanel;
 
 /**
@@ -15,7 +14,6 @@ import javax.swing.JPanel;
  * @author Raghavan
  * @version 1.0
  */
-
 public class RightPanel extends JPanel {
 
 	int x, y;
@@ -23,7 +21,6 @@ public class RightPanel extends JPanel {
 
 	/**
 	 * Uses graphics to draw different shape components
-	 * 
 	 * @param graphics
 	 */
 	public void paintComponent(Graphics graphics) {

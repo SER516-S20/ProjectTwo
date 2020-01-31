@@ -9,7 +9,7 @@ import javax.swing.JPanel;
  */ 
 public class DrawingCanvas extends JPanel implements MouseListener
 {
-	SelectedShape shape;
+	private SelectedShape shape;
 	
 	public DrawingCanvas()
 	{
