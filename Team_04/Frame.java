@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 /** 
  * @author Nikitha
- * @Since on 1-26-2020
+ * @Since 1-26-2020
  * @version 1.0
  */ 
 public class Frame extends JFrame
