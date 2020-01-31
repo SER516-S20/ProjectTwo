@@ -3,10 +3,16 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Icon;
 import javax.swing.JButton;
-
+/**
+ * 
+ * @author Rohith Varma Gaddam
+ * @since  01-27-2022
+ * @version 1.0
+ *
+ */
 public class Square extends JButton
 {
-	SelectionEvent event;
+	private SelectionEvent event;
 	private static Icon label;
 
 	public Square() 
@@ -21,9 +27,12 @@ public class Square extends JButton
 	
 	protected void paintComponent(Graphics g) 
 	{
-	     if (getModel().isArmed()) {
+	     if (getModel().isArmed()) 
+	     {
 	          g.setColor(Color.lightGray);
-	     } else {
+	     } 
+	     else 
+	     {
 	          g.setColor(getBackground());
 	     }
 	     g.fillRect(50, 10, getHeight()-30, getHeight()-30);

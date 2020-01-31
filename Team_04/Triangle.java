@@ -2,10 +2,14 @@ import java.awt.*;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.*;
-
+/**
+ * @author Rohith Varma Gaddam
+ * @since  01-27-2020
+ * @version 1.0
+ */
 public class Triangle extends JButton
 {
-	SelectionEvent event;
+	private SelectionEvent event;
 	private static Icon label;
 
 	public Triangle() 
@@ -19,9 +23,12 @@ public class Triangle extends JButton
 	}
 	
 	protected void paintComponent(Graphics g) {
-	     if (getModel().isArmed()) {
+	     if (getModel().isArmed()) 
+	     {
 	          g.setColor(Color.lightGray);
-	     } else {
+	     } 
+	     else 
+	     {
 	          g.setColor(getBackground());
 	     }
 	     int xPoints[] = {getSize().width/2, 30, getSize().width-30};
@@ -29,6 +36,7 @@ public class Triangle extends JButton
 	     g.fillPolygon(xPoints, yPoints, xPoints.length);
 	     super.paintComponent(g);
 	}
+	
 	protected void paintBorder(Graphics g) {
 	     g.setColor(getForeground());
 	     int xPoints[] = {getSize().width/2, 30, getSize().width-30};

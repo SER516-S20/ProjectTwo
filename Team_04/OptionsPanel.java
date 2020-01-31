@@ -17,11 +17,11 @@ public class OptionsPanel extends JPanel
 		Border blackline = BorderFactory.createLineBorder(Color.black);
 		setBorder(blackline);	
 		setLayout(new GridLayout(3,1));
-		Circle circle_button = new Circle();
-		add(circle_button);
-		Triangle triangle_button = new Triangle();
-		add(triangle_button);
-		Square square_button = new Square();
-		add(square_button);
+		Circle circleButton = new Circle();
+		add(circleButton);
+		Triangle triangleButton = new Triangle();
+		add(triangleButton);
+		Square squareButton = new Square();
+		add(squareButton);
 	}
 }

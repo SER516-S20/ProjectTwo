@@ -3,6 +3,10 @@ package Shapes;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+/**
+ * @author Sayali
+ * @version 1.0
+ */
 public class EllipseShape extends Shape {
     public void draw(GraphicsContext g) {
         g.setFill(color);

@@ -3,7 +3,11 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Icon;
 import javax.swing.JButton;
-
+/**
+ * @author Rohith Varma Gaddam
+ * @since  01-27-2020
+ * @version 1.0
+ */
 public class Circle extends JButton
 {
 	private SelectionEvent event;
@@ -19,7 +23,8 @@ public class Circle extends JButton
 		event = new SelectionEvent(this,"circle");
 	}
 	
-	protected void paintComponent(Graphics g) {
+	protected void paintComponent(Graphics g) 
+	{
 	     if (getModel().isArmed()) 
 	     {
 	         g.setColor(Color.lightGray);
@@ -32,7 +37,8 @@ public class Circle extends JButton
 	     super.paintComponent(g);
 	}
 	
-	protected void paintBorder(Graphics g) {
+	protected void paintBorder(Graphics g) 
+	{
 	     g.setColor(getForeground());
 	     g.drawOval(50, 0, getSize().height-1, getSize().height-1);
 	}

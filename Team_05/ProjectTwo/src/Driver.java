@@ -1,4 +1,4 @@
-/***
+/**
  * this class is only used for starting the app
  * @author Hongqi Zhang
  */
