@@ -7,6 +7,7 @@ import java.awt.RenderingHints;
 import java.awt.Shape;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+
 /**
  * this class implement the customer triangle button
  * @author Hongqi Zhang
@@ -34,9 +35,9 @@ public class TriangleButton extends JButton{
 	}
 
 	protected void paintComponent(Graphics g) {
-		if (getModel().isArmed()) {
+		if(getModel().isArmed()) {
 			g.setColor(background);
-		} else {
+		}else {
 			g.setColor(foreground);
 		}
 		Graphics2D g2d = (Graphics2D)g;

@@ -1,8 +1,9 @@
-//@author:ShihYuChang 
-//Leftmouse funtion
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * @author ShihYuChang
+ */
 public class LeftPanelMouse extends MouseAdapter{
 	private RightPanel rightPanel;
 	
@@ -15,11 +16,9 @@ public class LeftPanelMouse extends MouseAdapter{
 		String button = e.getSource().getClass().getName();
 		if(button == "RoundButton") {
 			rightPanel.addRound();
-		}
-		else if(button == "TriangleButton") {
+		}else if(button == "TriangleButton") {
 			rightPanel.addTriangle();
-		}
-		else {
+		}else {
 			rightPanel.addRectangle();
 		}
 	}

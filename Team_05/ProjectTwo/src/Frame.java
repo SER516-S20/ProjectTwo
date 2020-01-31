@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 /**
  * this class is to show the app
  * @author Hongqi Zhang
