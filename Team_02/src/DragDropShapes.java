@@ -9,6 +9,7 @@ import javax.swing.JComponent;
 /**
  * @author Rohit Kumar Singh
  * @created on 01-28-2020
+ * @version 1.0
  */
 public class DragDropShapes extends JComponent {
 	
