@@ -3,16 +3,14 @@
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
 public class RightPanelMouse implements MouseListener, MouseMotionListener {
 	private int currentX;
 	private int currentY;
 	private RightPanel rightPanel;
-	//private Frame frame;
+	
 	public RightPanelMouse(RightPanel rightPanel) {
 	
 		this.rightPanel = rightPanel;
-		//this.frame = frame;
 	}
 
 	@Override
@@ -48,7 +46,7 @@ public class RightPanelMouse implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		e.getComponent().setLocation(e.getX() + e.getComponent().getX() - currentX, 
-				 e.getY() + e.getComponent().getY() - currentY);
+				 					 e.getY() + e.getComponent().getY() - currentY);
 		
 	}
 
