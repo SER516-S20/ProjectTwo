@@ -10,9 +10,10 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 /**
-* @author Kai-Rui Hsu
-* This class can draw and create rectangle button.
-**/
+ * This class can draw and create rectangle button.
+ * @author KaiRui Hsu
+ * @since 01/26/2020 version 1.0
+ **/
 
 public class RectangleButton extends JButton{
 	
