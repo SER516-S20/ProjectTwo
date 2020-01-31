@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import javax.swing.*;
 /**
  * @author Rohith Varma Gaddam
- * @since  1-27-2020
+ * @since  01-27-2020
  * @version 1.0
  */
 public class Triangle extends JButton
