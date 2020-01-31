@@ -16,11 +16,9 @@ public class LeftPanelMouse extends MouseAdapter{
 		String button = e.getSource().getClass().getName();
 		if(button == "RoundButton") {
 			rightPanel.addRound();
-		}
-		else if(button == "TriangleButton") {
+		}else if(button == "TriangleButton") {
 			rightPanel.addTriangle();
-		}
-		else {
+		}else {
 			rightPanel.addRectangle();
 		}
 	}

@@ -29,9 +29,9 @@ public class RoundButton extends JButton{
 	}
 
 	protected void paintComponent(Graphics g) {
-		if (getModel().isArmed()) {
+		if(getModel().isArmed()) {
 			g.setColor(background);
-		} else {
+		}else {
 			g.setColor(foreground);
 		}
 		g.fillOval(0, 0, getSize().width - 1,getSize().height - 1);
