@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.swing.JFrame;
 
 /**
  * @author Chandan Kiragadalu Javaregowda
- *
+ * @version 1.0
  */
 public class Frame extends JFrame {
 	private static final long serialVersionUID = 1L;

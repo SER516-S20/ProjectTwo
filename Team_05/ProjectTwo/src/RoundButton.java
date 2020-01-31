@@ -4,14 +4,18 @@ import java.awt.geom.*;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
+/**
+ * this class implement the customer round button
+ * @author Hongqi Zhang
+ *
+ */ 
 public class RoundButton extends JButton{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private Shape shape;
 	private Color foreground = new Color(178, 255, 102);
 	private Color background = new Color(0, 255, 255);
+	
 	public RoundButton(String label) {
 		super(label);
 		Dimension size = getPreferredSize();
