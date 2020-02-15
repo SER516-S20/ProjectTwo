@@ -10,13 +10,13 @@ import java.awt.event.MouseListener;
  */
 
 //left panel from where we select shapes
-public class LeftPanel implements Panel{
+public class LeftPanel {
     final JPanel panel;
 
     LeftPanel() {
         this.panel = new JPanel();
         this.panel.setBounds(0, 0, 200, 800);
-        this.panel.setBackground(new Color(210, 210, 210));
+        this.panel.setBackground(new Color(241, 241, 241));
         this.panel.setLayout(new BoxLayout(this.panel, BoxLayout.Y_AXIS));
 
         JPanel triangle = new Triangle();
@@ -27,16 +27,18 @@ public class LeftPanel implements Panel{
         this.panel.add(circle);
         this.panel.add(square);
 
-        for (Object shape : this.panel.getComponents()) {
-            selectShape((JPanel) shape);
+        for (Component shape : this.panel.getComponents()) {
+            selectShape(shape);
+            shape.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         }
+
     }
 
     /*
      *Adds onClick Listener to the Shape
      *Shape is stored in MainWindow.java/selectedShape
      */
-    public void selectShape(JPanel shape) {
+    public void selectShape(Component shape) {
         shape.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {

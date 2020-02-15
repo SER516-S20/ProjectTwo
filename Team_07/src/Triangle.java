@@ -9,11 +9,12 @@ import java.awt.*;
 
 public class Triangle extends JPanel {
     public void paint(Graphics tempGraphics) {
-        int[] x = {50, 100, 150};
-        int[] y = {150, 50, 150};
+        int[] x = {0, 100, 50};
+        int[] y = {86, 86, 0};
         int numberOfPoints = 3;
         final Color BLUE = new Color(90, 200, 250);
         tempGraphics.setColor(BLUE);
         tempGraphics.fillPolygon(x, y, numberOfPoints);
+        this.setSize(100,86);
     }
 }

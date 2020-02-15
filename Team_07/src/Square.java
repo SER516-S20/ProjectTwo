@@ -8,13 +8,17 @@ import java.awt.*;
  */
 
 public class Square extends JPanel {
-    public void paint(Graphics tempGraphics) {
-        int[] x = {50, 150, 150, 50};
-        int[] y = {50, 50, 150, 150};
-        int numberOfPoints = 4;
+    public void paintComponent(Graphics tempGraphics) {
         final Color GREEN = new Color(76, 217, 100);
         tempGraphics.setColor(GREEN);
-        tempGraphics.fillPolygon(x, y, numberOfPoints);
+        tempGraphics.fillRect(0 , 0, 100,100);
+        this.setSize(100,100);
+    }
+    public void paintComponent1(Graphics tempGraphics) {
+        final Color GREEN = new Color(76, 217, 100);
+        tempGraphics.setColor(GREEN.brighter());
+        tempGraphics.fillRect(0 , 0, 100,100);
+        this.setSize(100,100);
     }
 
 }

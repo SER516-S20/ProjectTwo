@@ -8,10 +8,12 @@ import java.awt.*;
  */
 
 public class Circle extends JPanel {
+
     public void paint(Graphics tempGraphics) {
         int diameter = 50 * 2;
         final Color ORANGE = new Color(255, 149, 0);
         tempGraphics.setColor(ORANGE);
-        tempGraphics.fillOval(50, 50, diameter, diameter);
+        tempGraphics.fillOval(0, 0, diameter, diameter);
+        this.setSize(100,100);
     }
 }

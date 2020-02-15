@@ -12,7 +12,7 @@ import java.awt.event.MouseMotionListener;
  */
 
 //right panel where we create shapes
-public class RightPanel implements Panel {
+public class RightPanel{
     final JPanel panel;
 
     RightPanel() {
@@ -28,6 +28,35 @@ public class RightPanel implements Panel {
     public void drag(JPanel shape) {
         final int[] dragX = new int[1];
         final int[] dragY = new int[1];
+        shape.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+                Cursor moveCursor = new Cursor(Cursor.MOVE_CURSOR);
+                shape.setCursor(moveCursor);
+                shape.getGraphics().setColor(shape.getGraphics().getColor().brighter());
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+                Cursor defaultCursor = new Cursor(Cursor.DEFAULT_CURSOR);
+                shape.setCursor(defaultCursor);
+            }
+        });
         shape.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -92,7 +121,6 @@ public class RightPanel implements Panel {
 
             @Override
             public void mouseExited(MouseEvent mouseEvent) {
-
             }
         });
     }
