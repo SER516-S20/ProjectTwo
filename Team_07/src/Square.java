@@ -14,11 +14,5 @@ public class Square extends JPanel {
         tempGraphics.fillRect(0 , 0, 100,100);
         this.setSize(100,100);
     }
-    public void paintComponent1(Graphics tempGraphics) {
-        final Color GREEN = new Color(76, 217, 100);
-        tempGraphics.setColor(GREEN.brighter());
-        tempGraphics.fillRect(0 , 0, 100,100);
-        this.setSize(100,100);
-    }
 
 }
