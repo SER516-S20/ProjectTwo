@@ -12,7 +12,6 @@ public class BarLeft extends JPanel {
         final Color GREEN = new Color(255, 255, 255, 240);
         tempGraphics.setColor(GREEN);
         tempGraphics.fillRect(0 , 0, 10,60);
-//        this.setSize(100,100);
         this.setBounds(20,20,10,60);
     }
 }
