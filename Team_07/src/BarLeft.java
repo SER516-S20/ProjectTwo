@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * @author Aravind Thillai Villalan
- * @since 01-29-2020
+ * @author Karandeep Singh Grewal
+ * @since 02-15-2020
  */
 
 public class BarLeft extends JPanel {
