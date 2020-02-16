@@ -7,9 +7,10 @@ import javax.swing.*;
 
 public class MainWindow extends JFrame {
     static String selectedShape = "None";
+    static JFrame mainWindow;
 
     public static void main(String[] args) {
-        JFrame mainWindow = new JFrame("SER516-Project-Team07");
+        mainWindow = new JFrame("SER516-Project-Team07");
         mainWindow.setSize(1000, 800);
 
         LeftPanel leftPanel = new LeftPanel();
