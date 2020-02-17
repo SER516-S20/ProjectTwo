@@ -9,8 +9,8 @@ import java.awt.*;
 
 public class Square extends JPanel {
     public Square(){
-        this.add(new BarLeft());
-        this.add(new BarRight());
+        this.add(new SquareBarLeft());
+        this.add(new SquareBarRight());
     }
     public void paintComponent(Graphics tempGraphics) {
         final Color GREEN = new Color(76, 217, 100,150);

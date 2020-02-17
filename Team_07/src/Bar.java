@@ -6,4 +6,5 @@ import javax.swing.*;
  */
 
 public class Bar extends JPanel {
+
 }

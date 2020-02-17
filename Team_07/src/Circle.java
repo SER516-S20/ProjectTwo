@@ -9,6 +9,10 @@ import java.awt.*;
 
 public class Circle extends JPanel {
 
+    public Circle(){
+        this.add(new SquareBarLeft());
+    }
+
     public void paint(Graphics tempGraphics) {
         int diameter = 50 * 2;
         final Color ORANGE = new Color(255, 149, 0, 150);
