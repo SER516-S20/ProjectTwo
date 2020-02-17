@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -6,7 +5,7 @@ import java.awt.*;
  * @since 02-15-2020
  */
 
-public class BarLeft extends JPanel {
+public class BarLeft extends Bar {
 
     public void paintComponent(Graphics tempGraphics) {
         final Color GREEN = new Color(255, 255, 255, 240);

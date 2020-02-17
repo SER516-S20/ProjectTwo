@@ -17,11 +17,14 @@ public class LeftPanel {
         this.panel = new JPanel();
         this.panel.setBounds(0, 0, 200, 800);
         this.panel.setBackground(new Color(241, 241, 241));
-        this.panel.setLayout(new BoxLayout(this.panel, BoxLayout.Y_AXIS));
+        this.panel.setLayout(new FlowLayout(FlowLayout.CENTER,50,50));
 
         JPanel triangle = new Triangle();
+        triangle.setPreferredSize(new Dimension(100,100));
         JPanel circle = new Circle();
+        circle.setPreferredSize(new Dimension(100,100));
         JPanel square = new Square();
+        square.setPreferredSize(new Dimension(100,100));
 
         this.panel.add(triangle);
         this.panel.add(circle);
@@ -31,8 +34,8 @@ public class LeftPanel {
             selectShape(shape);
             shape.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         }
-
     }
+
 
     /*
      *Adds onClick Listener to the Shape
