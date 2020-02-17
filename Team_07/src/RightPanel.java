@@ -12,8 +12,9 @@ import java.awt.event.MouseMotionListener;
  */
 
 //right panel where we create shapes
-public class RightPanel{
+public class RightPanel {
     final JPanel panel;
+    static JPanel transparent = new TransparentDrawingArea();
 
     RightPanel() {
         panel = new JPanel();
@@ -21,7 +22,7 @@ public class RightPanel{
         panel.setBackground(Color.GRAY);
         panel.setLayout(null);
         makeShapes(panel);
-
+        panel.add(transparent);
     }
 
     /*makes the shape draggable*/
@@ -98,7 +99,7 @@ public class RightPanel{
                     shape = new Circle();
                 int mouseLocationX = mouseEvent.getX();
                 int mouseLocationY = mouseEvent.getY();
-                if(shape!=null) {
+                if (shape != null) {
                     shape.setBounds(mouseLocationX - 50, mouseLocationY - 50,
                             mouseLocationX + 50, mouseLocationY + 50);
                     panel.add(shape);
