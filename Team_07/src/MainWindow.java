@@ -22,6 +22,8 @@ public class MainWindow extends JFrame {
         mainWindow.setVisible(true);
         mainWindow.setResizable(false);
         mainWindow.setLocationRelativeTo(null);
+        mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 }
 
