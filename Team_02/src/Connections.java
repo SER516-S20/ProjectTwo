@@ -30,6 +30,7 @@ class Connections extends JFrame{
     public void DotToBarConnection(Graphics g, int x1, int y1, int x2, int y2)
     {
         try{
+            
         }
         catch(Exception ex){
             
@@ -43,14 +44,18 @@ class Connections extends JFrame{
             
         }
     }
-    void drawLines(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
+    void drawLines(Graphics g, int x1, int y1, int x2, int y2) {
+      try{
+          Graphics2D g2d = (Graphics2D) g;
+      
  
-        g2d.drawLine(120, 50, 360, 50);
- 
-        g2d.draw(new Line2D.Double(59.2d, 99.8d, 419.1d, 99.8d));
- 
-        g2d.draw(new Line2D.Float(21.50f, 132.50f, 459.50f, 132.50f));
+        g2d.drawLine(x1, y1, x2, y2);
+      }
+      catch(Exception ex)
+      {
+          System.out.println(ex.getMessage());
+      }
+      
     }
 
 }
