@@ -97,4 +97,13 @@ public class RightPanel extends JPanel {
 	{
 		return shapes;
 	}
+	
+	public void clear()
+	{
+		for(JButton shape:shapes.values())
+		{
+			this.remove(shape);
+		}
+		shapes.clear();
+	}
 }
