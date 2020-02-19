@@ -2,10 +2,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * this class is to show the app
@@ -34,13 +37,12 @@ public class Frame extends JFrame{
 		this.pack();
 		this.setLocationRelativeTo(null);
 		
+		JMenu fileMenu =  new JMenu("File");
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		
-		JMenuItem itemSave = new JMenuItem("save");
-		itemSave.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+		JMenuItem itemSave = new JMenuItem("Save File");
+		itemSave.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
 				ComponentScreenShoot img = new ComponentScreenShoot();
 				try {
 					img.saveScreenShoot(dragArea);
@@ -48,9 +50,25 @@ public class Frame extends JFrame{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			}
+			  }
 		});
-		menuBar.add(itemSave);
+		
+		fileMenu.add(itemSave);
+		fileMenu.addSeparator();
+		JMenuItem itemOpen = new JMenuItem("Open File");
+		itemOpen.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+//				MyFileManager img = new MyFileManager();
+//				try {
+//					img.open(dragArea);
+//				} catch (Exception e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+			  }
+		});
+		fileMenu.add(itemOpen);
+		menuBar.add(fileMenu);
 		this.setVisible(true);
 	}
 	
