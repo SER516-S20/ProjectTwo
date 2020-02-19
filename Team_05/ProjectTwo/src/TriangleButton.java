@@ -1,3 +1,4 @@
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -5,6 +6,8 @@ import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.awt.RenderingHints;
 import java.awt.Shape;
+import java.awt.Stroke;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
@@ -50,6 +53,11 @@ public class TriangleButton extends JButton{
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g2d.draw(triangle);
+		Stroke stroke = new BasicStroke(4f);
+		g2d.setStroke(stroke);
+		g2d.drawLine(15, size.height - 1 - 10, 15, size.height - 1 - 10);
+		g2d.drawLine((size.width - 1) / 2, 15, (size.width - 1) / 2, 15);
+		g2d.drawLine(size.width - 1 - 15, size.height - 1 - 10, size.width - 1 - 15, size.height - 1 - 10);
 	}
 
 	public boolean contains(int x, int y) {
