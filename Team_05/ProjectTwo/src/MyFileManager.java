@@ -43,6 +43,7 @@ public class MyFileManager {
 		{
 			File fileToSave = fileChooser.getSelectedFile();
 			System.out.println(fileToSave.toString());
+			
 			saver(fileToSave);
 		}
 	}
@@ -55,8 +56,8 @@ public class MyFileManager {
 		int selection = fileChooser.showOpenDialog(parentFrame);
 		if(selection == fileChooser.APPROVE_OPTION)
 		{
-			File fileToSave = fileChooser.getSelectedFile();
-			
+			File fileToOpen = fileChooser.getSelectedFile();
+			opener(fileToOpen);
 		}
 	}
 	
@@ -111,16 +112,16 @@ public class MyFileManager {
 			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 			Document doc = docBuilder.parse(file);
 			doc.getDocumentElement().normalize();  
-			System.out.println("Root element: " + doc.getDocumentElement().getNodeName());  
+			//System.out.println("Root element: " + doc.getDocumentElement().getNodeName());  
 			NodeList nodeList = doc.getElementsByTagName("shape");
 			for(int i = 0;i<nodeList.getLength();i++)
 			{
 				Node node = nodeList.item(i);
-				System.out.println("\nNode Name :" + node.getNodeName());
+				//System.out.println("\nNode Name :" + node.getNodeName());
 				if (node.getNodeType() == Node.ELEMENT_NODE)   
 				{  
 				Element eElement = (Element) node;
-				int ID = Integer.parseInt(node.getAttributes().getNamedItem("name").getNodeValue());
+				int ID = Integer.parseInt(node.getAttributes().getNamedItem("id").getNodeValue());
 				switch(eElement.getElementsByTagName("type").item(0).getTextContent())
 				{
 				case "round":

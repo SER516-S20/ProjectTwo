@@ -22,6 +22,7 @@ public class Frame extends JFrame{
 	private static final Color rBackground = new Color(240, 255, 255);
 	private RightPanel dragArea;
 	private LeftPanel btnContainer;
+	private MyFileManager fileManager;
 	
 	public Frame() {
 		this.setTitle(title);
@@ -32,6 +33,7 @@ public class Frame extends JFrame{
 		btnContainer = new LeftPanel();
 		dragArea = new RightPanel();
 		dragArea.setFrame(this);
+		fileManager = new MyFileManager(dragArea);
 		this.getContentPane().add(createLeftPanel());
 		this.getContentPane().add(createRightPanel());
 		this.pack();
@@ -43,13 +45,7 @@ public class Frame extends JFrame{
 		JMenuItem itemSave = new JMenuItem("Save File");
 		itemSave.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				ComponentScreenShoot img = new ComponentScreenShoot();
-				try {
-					img.saveScreenShoot(dragArea);
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				fileManager.save();
 			  }
 		});
 		
@@ -58,13 +54,7 @@ public class Frame extends JFrame{
 		JMenuItem itemOpen = new JMenuItem("Open File");
 		itemOpen.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-//				MyFileManager img = new MyFileManager();
-//				try {
-//					img.open(dragArea);
-//				} catch (Exception e1) {
-//					// TODO Auto-generated catch block
-//					e1.printStackTrace();
-//				}
+				fileManager.open();
 			  }
 		});
 		fileMenu.add(itemOpen);
