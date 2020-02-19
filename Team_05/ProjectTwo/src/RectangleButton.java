@@ -1,9 +1,11 @@
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.Shape;
+import java.awt.Stroke;
 import java.awt.geom.Ellipse2D;
 
 import javax.swing.BorderFactory;
@@ -50,6 +52,11 @@ public class RectangleButton extends JButton {
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g2d.drawRect(0, 0, getSize().width - 1, getSize().height - 1);
+		Stroke stroke = new BasicStroke(2f);
+		g2d.setStroke(stroke);
+		g2d.drawLine(10, 10, 10, getSize().height - 1 - 10);
+		g2d.drawLine(getSize().width - 1 - 10, 10,
+					getSize().width - 1 - 10, getSize().height - 1 - 10);
 	}
 
 	public boolean contains(int x, int y) {
