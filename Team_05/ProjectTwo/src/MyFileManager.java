@@ -1,3 +1,4 @@
+import java.awt.Point;
 import java.io.File;
 import java.util.Hashtable;
 
@@ -90,7 +91,10 @@ public class MyFileManager {
 				{
 					type.appendChild(doc.createTextNode("triangle"));
 				}
+				Element position = doc.createElement("position");
+				position.appendChild(doc.createTextNode(theShape.getLocation().x+","+theShape.getLocation().y));
 				shape.appendChild(type);
+				shape.appendChild(position);
 			}
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
@@ -123,16 +127,18 @@ public class MyFileManager {
 				{  
 				Element eElement = (Element) node;
 				int ID = Integer.parseInt(node.getAttributes().getNamedItem("id").getNodeValue());
+				String position[] = eElement.getElementsByTagName("position").item(0).getTextContent().split(",");
+				Point point = new Point(Integer.parseInt(position[0]),Integer.parseInt(position[1]));
 				switch(eElement.getElementsByTagName("type").item(0).getTextContent())
 				{
 				case "round":
-					rightPanel.addRound(ID);
+					rightPanel.addRound(ID,point);
 					break;
 				case "rectangle":
-					rightPanel.addRectangle(ID);
+					rightPanel.addRectangle(ID,point);
 					break;
 				default:
-					rightPanel.addTriangle(ID);
+					rightPanel.addTriangle(ID,point);
 					break;
 				}
 //				System.out.println("Student id: "+ eElement.getElementsByTagName("id").item(0).getTextContent());  
