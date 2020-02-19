@@ -2,6 +2,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * this class is to show the app
@@ -21,7 +25,7 @@ public class Frame extends JFrame{
 		this.setMinimumSize(new Dimension(800, 500));
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(null);
+		getContentPane().setLayout(null);
 		btnContainer = new LeftPanel();
 		dragArea = new RightPanel();
 		dragArea.setFrame(this);
@@ -29,6 +33,24 @@ public class Frame extends JFrame{
 		this.getContentPane().add(createRightPanel());
 		this.pack();
 		this.setLocationRelativeTo(null);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenuItem itemSave = new JMenuItem("save");
+		itemSave.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ComponentScreenShoot img = new ComponentScreenShoot();
+				try {
+					img.saveScreenShoot(dragArea);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		menuBar.add(itemSave);
 		this.setVisible(true);
 	}
 	
