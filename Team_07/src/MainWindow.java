@@ -1,15 +1,16 @@
 import javax.swing.*;
 
-/*
+/**
  * @author Karandeep Singh Grewal
  * @since 01-26-2020
  */
 
 public class MainWindow extends JFrame {
     static String selectedShape = "None";
+    static JFrame mainWindow;
 
     public static void main(String[] args) {
-        JFrame mainWindow = new JFrame("SER516-Project-Team07");
+        mainWindow = new JFrame("SER516-Project-Team07");
         mainWindow.setSize(1000, 800);
 
         LeftPanel leftPanel = new LeftPanel();
@@ -17,7 +18,6 @@ public class MainWindow extends JFrame {
 
         mainWindow.add(leftPanel.panel);
         mainWindow.add(rightPanel.panel);
-
         mainWindow.setLayout(null);
         mainWindow.setVisible(true);
         mainWindow.setResizable(false);

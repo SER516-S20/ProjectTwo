@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-/*
+/**
  * @author Karandeep Singh Grewal
  * @author Aditya Bajaj
  * @author Praveen
@@ -12,7 +12,7 @@ import java.awt.event.MouseMotionListener;
  */
 
 //right panel where we create shapes
-public class RightPanel implements Panel {
+public class RightPanel{
     final JPanel panel;
 
     RightPanel() {
@@ -24,10 +24,39 @@ public class RightPanel implements Panel {
 
     }
 
-    //makes the shape draggable
+    /*makes the shape draggable*/
     public void drag(JPanel shape) {
         final int[] dragX = new int[1];
         final int[] dragY = new int[1];
+        shape.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+                Cursor moveCursor = new Cursor(Cursor.MOVE_CURSOR);
+                shape.setCursor(moveCursor);
+                shape.getGraphics().setColor(shape.getGraphics().getColor().brighter());
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+                Cursor defaultCursor = new Cursor(Cursor.DEFAULT_CURSOR);
+                shape.setCursor(defaultCursor);
+            }
+        });
         shape.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -55,23 +84,28 @@ public class RightPanel implements Panel {
         });
     }
 
-    //creates the shape when we click on the mouse location
+    /*creates the shape when we click on the mouse location*/
     public void makeShapes(JPanel panel) {
         panel.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                JPanel shape = new Triangle();
+                JPanel shape = null;
                 if (MainWindow.selectedShape.contains("Square"))
                     shape = new Square();
+                if (MainWindow.selectedShape.contains("Triangle"))
+                    shape = new Triangle();
                 if (MainWindow.selectedShape.contains("Circle"))
                     shape = new Circle();
                 int mouseLocationX = mouseEvent.getX();
                 int mouseLocationY = mouseEvent.getY();
-                shape.setBounds(mouseLocationX - 50, mouseLocationY - 50, mouseLocationX + 50, mouseLocationY + 50);
-                panel.add(shape);
-                panel.revalidate();
-                panel.repaint();
-                drag(shape);
+                if(shape!=null) {
+                    shape.setBounds(mouseLocationX - 50, mouseLocationY - 50,
+                            mouseLocationX + 50, mouseLocationY + 50);
+                    panel.add(shape);
+                    panel.revalidate();
+                    panel.repaint();
+                    drag(shape);
+                }
             }
 
             @Override
@@ -91,7 +125,6 @@ public class RightPanel implements Panel {
 
             @Override
             public void mouseExited(MouseEvent mouseEvent) {
-
             }
         });
     }

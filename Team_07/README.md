@@ -1,16 +1,24 @@
-Required: JDK 1.8 version installed
+# Team 07
 
-Steps to run:
+### Requirement
+* Java JDK 1.8
 
-Step 1: Import project folder Team_07 in your IDE. 
+### Running the application
 
-Step 2: Run mainWindow.java
+Open terminal at `ProjectTwo/Team_07/src/`
 
-Possible error scenarios: 
 
-When you click on any of the shape icon on the left, and then click on the right pane, the shapes get displayed correctly most of the times. But, sometimes because of the boundaries set, the shapes appear half in size or some overlap is there. We tried fixing it but could not figure out why this overlay was happening. 
+```bash
+javac MainWindow.java ; java MainWindow
+```
 
-On the whole, the project is working fine and attached is a youtube link showing the same for reference. We are trying to improve by fixing the minor glitch.
+### Possible Issue Scenarios
+Sometimes:
+* A glitch in adding shapes
+* Unable to drag the shape you want to drag (_Try: Release the click. Move the cursor a bit and try to drag the shape again)_
 
-https://youtu.be/_80lvlUW0JQ
-
+### Contributions
+* Aditya Bajaj
+* Aravind Thillai Villalan
+* Karandeep Singh Grewal
+* Praveen Kumar

@@ -49,7 +49,8 @@ public class DrawShapeOnMouseClick extends JPanel {
 				} else if (currShape.equalsIgnoreCase("square")) {
 					graphicsDimension.drawRect(p1.x, p1.y, 80, 80);
 				} else if (currShape.equalsIgnoreCase("circle")) {
-					graphicsDimension.drawOval(p1.x, p1.y, 80, 80);
+					graphicsDimension.drawOval(p1.x-40, p1.y-40, 80, 80);
+					graphicsDimension.fillOval(p1.x-3, p1.y-3, 6, 6);
 				} else if (currShape.equalsIgnoreCase("triangle")) {
 					graphicsDimension.drawPolygon(new int[] { p1.x - 40, p1.x, p1.x + 40 },
 							new int[] { p1.y + 40, p1.y - 40, p1.y + 40 }, 3);
