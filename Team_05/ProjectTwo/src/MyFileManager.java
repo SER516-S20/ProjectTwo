@@ -141,6 +141,7 @@ public class MyFileManager {
 //				System.out.println("Marks: "+ eElement.getElementsByTagName("marks").item(0).getTextContent());  
 				}  
 			}
+			rightPanel.updateHashCode();
 		}
 		catch(Exception e)
 		{
