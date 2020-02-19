@@ -55,4 +55,9 @@ public class RightPanel extends JPanel {
 		shapes.get(hashCode).setLocation(x,y);
 		frame.contentRepaint();
 	}
+	
+	public Hashtable<Integer, JButton> getShapes()
+	{
+		return shapes;
+	}
 }
