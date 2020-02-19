@@ -68,6 +68,16 @@ public class RightPanel extends JPanel {
 		frame.contentRepaint();
 	}
 	
+	public void updateHashCode()
+	{
+		Hashtable<Integer, JButton> update = new Hashtable<Integer, JButton>();
+		for(JButton shape:shapes.values())
+		{
+			update.put(shape.hashCode(), shape);
+		}
+		shapes = update;
+	}
+	
 	public void deleteShape(int hashCode) {
 		this.remove(shapes.get(hashCode));
 		shapes.remove(hashCode);
