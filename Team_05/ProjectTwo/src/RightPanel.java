@@ -23,6 +23,15 @@ public class RightPanel extends JPanel {
 		frame.contentRepaint();
 	}
 	
+	public void addRound(int ID) {
+		RoundButton round = new RoundButton("");
+		round.addMouseListener(new RightPanelMouse(this) {});
+		round.addMouseMotionListener(new RightPanelMouse(this) {});
+		shapes.put(ID,round);
+		this.add(round);
+		frame.contentRepaint();
+	}
+	
 	public void addTriangle() {
 		TriangleButton triangle = new TriangleButton("");
 		triangle.addMouseListener(new RightPanelMouse(this) {});
@@ -32,11 +41,29 @@ public class RightPanel extends JPanel {
 		frame.contentRepaint();
 	}
 	
+	public void addTriangle(int ID) {
+		TriangleButton triangle = new TriangleButton("");
+		triangle.addMouseListener(new RightPanelMouse(this) {});
+		triangle.addMouseMotionListener(new RightPanelMouse(this) {});
+		shapes.put(ID,triangle);
+		this.add(triangle);
+		frame.contentRepaint();
+	}
+	
 	public void addRectangle() {
 		RectangleButton rectangle = new RectangleButton("");
 		rectangle.addMouseListener(new RightPanelMouse(this) {});
 		rectangle.addMouseMotionListener(new RightPanelMouse(this) {});
 		shapes.put(rectangle.hashCode(),rectangle);
+		this.add(rectangle);
+		frame.contentRepaint();
+	}
+	
+	public void addRectangle(int ID) {
+		RectangleButton rectangle = new RectangleButton("");
+		rectangle.addMouseListener(new RightPanelMouse(this) {});
+		rectangle.addMouseMotionListener(new RightPanelMouse(this) {});
+		shapes.put(ID,rectangle);
 		this.add(rectangle);
 		frame.contentRepaint();
 	}
