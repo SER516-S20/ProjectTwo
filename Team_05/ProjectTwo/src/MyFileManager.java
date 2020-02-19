@@ -106,6 +106,7 @@ public class MyFileManager {
 	
 	private void opener(File file)
 	{
+		rightPanel.clear();
 		try
 		{
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
