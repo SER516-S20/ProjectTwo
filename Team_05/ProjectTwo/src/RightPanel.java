@@ -37,7 +37,7 @@ public class RightPanel extends JPanel {
 		round.addMouseListener(new RightPanelMouse(this) {});
 		round.addMouseMotionListener(new RightPanelMouse(this) {});
 		round.setLocation(position.x,position.y);
-		round.setSize(step,step);
+		round.setSize(round.getPreferredSize());
 		shapes.put(ID,round);
 		this.add(round);
 		frame.contentRepaint();
@@ -58,7 +58,7 @@ public class RightPanel extends JPanel {
 		triangle.addMouseListener(new RightPanelMouse(this) {});
 		triangle.addMouseMotionListener(new RightPanelMouse(this) {});
 		triangle.setLocation(position.x,position.y);
-		triangle.setSize(step,step);
+		triangle.setSize(triangle.getPreferredSize());
 		shapes.put(ID,triangle);
 		this.add(triangle);
 		frame.contentRepaint();
@@ -79,7 +79,7 @@ public class RightPanel extends JPanel {
 		rectangle.addMouseListener(new RightPanelMouse(this) {});
 		rectangle.addMouseMotionListener(new RightPanelMouse(this) {});
 		rectangle.setLocation(position.x,position.y);
-		rectangle.setSize(step,step);
+		rectangle.setSize(rectangle.getPreferredSize());
 		shapes.put(ID,rectangle);
 		this.add(rectangle);
 		frame.contentRepaint();
@@ -129,7 +129,8 @@ public class RightPanel extends JPanel {
 	private void autoLocation(JButton button)
 	{
 		Rectangle dimension = this.getBounds();
-		button.setSize(step, step);
+		//button.setSize(step, step);
+		button.setSize(button.getPreferredSize());
 		if(currentX<=dimension.width-step)
 		{
 			button.setLocation(currentX, currentY);
