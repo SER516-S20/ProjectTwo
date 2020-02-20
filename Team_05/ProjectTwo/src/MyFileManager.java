@@ -18,7 +18,7 @@ import org.w3c.dom.NodeList;
 
 public class MyFileManager {
 	
-	private static RightPanel rightPanel;
+	private RightPanel rightPanel;
 	private JFrame parentFrame;
 	private Object object;
 	JFileChooser fileChooser;
@@ -125,28 +125,23 @@ public class MyFileManager {
 				//System.out.println("\nNode Name :" + node.getNodeName());
 				if (node.getNodeType() == Node.ELEMENT_NODE)   
 				{  
-				Element eElement = (Element) node;
-				int ID = Integer.parseInt(node.getAttributes().getNamedItem("id").getNodeValue());
-				String position[] = eElement.getElementsByTagName("position").item(0).getTextContent().split(",");
-				Point point = new Point(Integer.parseInt(position[0]),Integer.parseInt(position[1]));
-				switch(eElement.getElementsByTagName("type").item(0).getTextContent())
-				{
-				case "round":
-					rightPanel.addRound(ID,point);
-					break;
-				case "rectangle":
-					rightPanel.addRectangle(ID,point);
-					break;
-				default:
-					rightPanel.addTriangle(ID,point);
-					break;
+					Element eElement = (Element) node;
+					int ID = Integer.parseInt(node.getAttributes().getNamedItem("id").getNodeValue());
+					String position[] = eElement.getElementsByTagName("position").item(0).getTextContent().split(",");
+					Point point = new Point(Integer.parseInt(position[0]),Integer.parseInt(position[1]));
+					switch(eElement.getElementsByTagName("type").item(0).getTextContent())
+					{
+						case "round":
+							rightPanel.addRound(ID,point);
+							break;
+						case "rectangle":
+							rightPanel.addRectangle(ID,point);
+							break;
+						default:
+							rightPanel.addTriangle(ID,point);
+							break;
+					}
 				}
-//				System.out.println("Student id: "+ eElement.getElementsByTagName("id").item(0).getTextContent());  
-//				System.out.println("First Name: "+ eElement.getElementsByTagName("firstname").item(0).getTextContent());  
-//				System.out.println("Last Name: "+ eElement.getElementsByTagName("lastname").item(0).getTextContent());  
-//				System.out.println("Subject: "+ eElement.getElementsByTagName("subject").item(0).getTextContent());  
-//				System.out.println("Marks: "+ eElement.getElementsByTagName("marks").item(0).getTextContent());  
-				}  
 			}
 			rightPanel.updateHashCode();
 		}
