@@ -1,8 +1,11 @@
+import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.Hashtable;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import com.sun.prism.Graphics;
 
 /**
  * @author Yijian Hu
@@ -84,7 +87,13 @@ public class RightPanel extends JPanel {
 		this.add(rectangle);
 		frame.contentRepaint();
 	}
-	
+	public void drawLine(Point position){
+		Line line = new Line("");
+		line.setLocation(position.x,position.y);
+		line.setSize(400,400);
+		this.add(line);
+		frame.contentRepaint();
+	}
 	public void updateHashCode()
 	{
 		Hashtable<Integer, JButton> update = new Hashtable<Integer, JButton>();
@@ -125,7 +134,12 @@ public class RightPanel extends JPanel {
 		currentX=0;
 		currentY=0;
 	}
-	
+	public int getxLocation() {
+		return 50;
+	}
+	public int getyLocation() {
+		return 0;
+	}
 	private void autoLocation(JButton button)
 	{
 		Rectangle dimension = this.getBounds();

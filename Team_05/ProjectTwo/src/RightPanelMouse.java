@@ -23,8 +23,8 @@ public class RightPanelMouse implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method st
+		rightPanel.drawLine(e.getPoint());
 	}
 
 	@Override
