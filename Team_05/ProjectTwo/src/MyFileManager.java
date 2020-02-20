@@ -20,7 +20,6 @@ public class MyFileManager {
 	
 	private RightPanel rightPanel;
 	private JFrame parentFrame;
-	private Object object;
 	JFileChooser fileChooser;
 	Hashtable<Integer, JButton> shapes;
 	
@@ -40,7 +39,7 @@ public class MyFileManager {
 		fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("Save file");
 		int selection = fileChooser.showSaveDialog(parentFrame);
-		if(selection == fileChooser.APPROVE_OPTION)
+		if(selection == JFileChooser.APPROVE_OPTION)
 		{
 			File fileToSave = fileChooser.getSelectedFile();
 			System.out.println(fileToSave.toString());
@@ -55,7 +54,7 @@ public class MyFileManager {
 		fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("Open file");
 		int selection = fileChooser.showOpenDialog(parentFrame);
-		if(selection == fileChooser.APPROVE_OPTION)
+		if(selection == JFileChooser.APPROVE_OPTION)
 		{
 			File fileToOpen = fileChooser.getSelectedFile();
 			opener(fileToOpen);
