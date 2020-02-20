@@ -25,8 +25,35 @@ public class MainWindow extends JFrame {
         mainWindow = new JFrame("SER516-Project-Team07");
         mainWindow.setSize(1000, 800);
 
+        JMenuBar menuBar = new JMenuBar();
+        mainWindow.setJMenuBar(menuBar);
+        JMenu file = new JMenu("File");
+        menuBar.add(file);
+        
+        JMenuItem open = new JMenuItem("Open");
+        JMenuItem save = new JMenuItem("Save");
+        file.add(open);
+        file.add(save);        
+        
         LeftPanel leftPanel = new LeftPanel();
         RightPanel rightPanel = new RightPanel();
+        
+        MenuBar myMenuBar = new MenuBar(rightPanel);
+        
+        open.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				myMenuBar.open();
+				System.out.println("open pressed");
+			}
+        });
+        save.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("save pressed");
+				myMenuBar.save();
+			}
+        });
 
         mainWindow.add(leftPanel.panel);
         mainWindow.add(rightPanel.panel);
