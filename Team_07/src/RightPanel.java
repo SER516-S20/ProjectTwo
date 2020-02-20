@@ -129,4 +129,9 @@ public class RightPanel {
             }
         });
     }
+    public void deleteAllshapes()
+    {
+    	panel.removeAll();   
+		panel.repaint();
+    }
 }
