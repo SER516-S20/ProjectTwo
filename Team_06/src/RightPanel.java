@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @Date: 01/28/2020
  */
 public class RightPanel extends PanelInterface{
-	int finalFlag = 0;
+	public static int finalFlag = 0;
 	private static RightPanel single_instance = null;
 	
 	public static RightPanel getInstance()
